@@ -20,7 +20,14 @@
   font-family: Unbounded-bold;
   src: url("../public/fonts/Unbounded-Bold.ttf");
 }
-
+@font-face {
+  font-family: Space-grotesk-bold;
+  src: url("../public/fonts/SpaceGrotesk-Bold.ttf");
+}
 .unbounded-bold {
   font-family: Unbounded-bold;
+}
+
+.space-grotesk-bold {
+  font-family: Space-grotesk-bold;
 }
