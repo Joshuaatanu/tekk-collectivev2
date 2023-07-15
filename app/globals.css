@@ -16,6 +16,17 @@
   }
 }
 
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 @font-face {
   font-family: Unbounded-bold;
   src: url("../public/fonts/Unbounded-Bold.ttf");
@@ -25,8 +36,16 @@
   src: url("../public/fonts/Unbounded-Regular.ttf");
 }
 @font-face {
+  font-family: Unbounded-extrabold;
+  src: url(../public/fonts/Unbounded-ExtraBold.ttf);
+}
+@font-face {
   font-family: Space-grotesk-bold;
   src: url("../public/fonts/SpaceGrotesk-Bold.ttf");
+}
+@font-face {
+  font-family: Space-grotesk-regular;
+  src: url("../public/fonts/SpaceGrotesk-Regular.ttf");
 }
 .unbounded-bold {
   font-family: Unbounded-bold;
@@ -34,7 +53,13 @@
 .unbounded-regular {
   font-family: Unbounded-regular;
 }
+.unbounded-extrabold {
+  font-family: Unbounded-extrabold;
+}
 
 .space-grotesk-bold {
   font-family: Space-grotesk-bold;
+}
+.space-grotesk-regular {
+  font-family: Space-grotesk-regular;
 }

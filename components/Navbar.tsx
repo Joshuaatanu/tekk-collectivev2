@@ -11,8 +11,12 @@ export default function Navbar() {
       />
 
       <div className="ml-auto flex flex-row space-x-20 space-grotesk-bold text-[16px] ">
-        <h1>Home</h1>
-        <h1>Contact</h1>
+        <a href="/">
+          <h1>Home</h1>
+        </a>
+        <a href="/contact">
+          <h1>Contact</h1>
+        </a>
         <h1>Project</h1>
         <h1>Services</h1>
       </div>

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 // "use client";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 // import Typewriter from "typewriter-effect";
@@ -121,6 +122,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
