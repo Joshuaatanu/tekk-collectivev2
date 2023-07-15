@@ -71,11 +71,15 @@ export default function page() {
       <section className="px-8">
         <div className="flex lg:flex-row flex-col ">
           <form
-            action="https://api.web3forms.comm/submit"
+            action="https://api.web3forms.com/submit"
             className="flex lg:flex-col flex-col space-y-4"
             method="POST"
           >
-            <input type="hidden" name="access_key" value="" />
+            <input
+              type="hidden"
+              name="access_key"
+              value="7e09478d-d697-405e-b85e-36cb81615d5c"
+            />
             <input
               type="email"
               name="email"
