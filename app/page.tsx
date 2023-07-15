@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <div className="bg-black  overflow-hidden">
       <div className='bg-[url("../public/images/hero-home.jpg")] w-full bg-cover h-[690px]'>
         <Navbar />
 
@@ -61,7 +61,7 @@ export default function Home() {
         </div> */}
       </section>
 
-      <section className="px-8 bg-[url('../public/images/call-to-action.jpg')] py-20 mt-6">
+      <section className="px-8 bg-[url('../public/images/call-to-action.jpg')] bg-cover py-20 mt-6">
         <h3 className=" text-[48px] unbounded-bold  text-white text-center ">
           {" "}
           Get started
@@ -73,17 +73,53 @@ export default function Home() {
         <div className="flex justify-center items-center mt-5">
           <a
             href="#"
-            className="bg-white text-black space-grotesk-bold  rounded-sm py-4 px-10"
+            className="bg-white text-black space-grotesk-bold hover:text-white duration-300 transition hover:bg-black  rounded-md py-4 px-10"
           >
             Contact us
           </a>
         </div>
       </section>
 
-      <section className="px-8">
+      <section className="lg:px-8 px-">
         <h3 className="text-white  text-[48px] unbounded-bold pt-10">
           Testimonials
         </h3>
+        <div></div>
+        <div className="flex lg:flex-row flex-col lg:space-x-16  space-x-16 space-y-16  mr-10 mt-8">
+          <div className="bg-[#d9d9d9] lg:w-[600px] w-[560px]  ml-16 mt-16 rounded-md h-[420px] ">
+            <img src="images/Dawn.svg" alt="" className="mx-auto  mt-24" />
+            <h3 className="unbounded-regular text-[20px] text-center px-4 mt-8 ">
+              Tekk Collective has completely transformed our online presence and
+              elevated our brand with their exceptional work.
+            </h3>
+            <p className="unbounded-regular text-[20px] mt-6  text-center">
+              {" "}
+              RoyalQ Assiatant
+            </p>
+          </div>
+          <div className="bg-[#d9d9d9] lg:w-[600px] w-[560px] rounded-md h-[420px] ">
+            <img src="images/Portal.svg" alt="" className="mx-auto mt-24" />
+            <h3 className="unbounded-regular text-[20px] text-center px-4 mt-8 ">
+              Their minimalist design philosophy and technical expertise were a
+              game-changer for our startup’s success.
+            </h3>
+            <p className="unbounded-regular text-[20px] mt-12  text-center">
+              {" "}
+              Emperico Works
+            </p>
+          </div>
+          <div className="bg-[#d9d9d9]  lg:w-[600px] w-[560px] rounded-md h-[420px] ">
+            <img
+              src="images/Transparency.svg"
+              alt=""
+              className="mx-auto mt-24"
+            />
+            <h3 className="unbounded-regular text-[20px] text-center px-4 mt-8 ">
+              Their minimalist design philosophy and technical expertise were a
+              game-changer for our startup’s success.
+            </h3>
+          </div>
+        </div>
       </section>
     </div>
   );

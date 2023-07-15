@@ -21,11 +21,18 @@
   src: url("../public/fonts/Unbounded-Bold.ttf");
 }
 @font-face {
+  font-family: Unbounded-regular;
+  src: url("../public/fonts/Unbounded-Regular.ttf");
+}
+@font-face {
   font-family: Space-grotesk-bold;
   src: url("../public/fonts/SpaceGrotesk-Bold.ttf");
 }
 .unbounded-bold {
   font-family: Unbounded-bold;
+}
+.unbounded-regular {
+  font-family: Unbounded-regular;
 }
 
 .space-grotesk-bold {
