@@ -12,6 +12,41 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-33.333%)' },
+        },
+        'marquee-reverse': {
+          '0%': { transform: 'translateX(-33.333%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'pulse-glow': {
+          '0%': { boxShadow: '0 0 0 0 rgba(255,255,255,0.4)' },
+          '70%': { boxShadow: '0 0 0 10px rgba(255,255,255,0)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(255,255,255,0)' },
+        },
+        'slide-in': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 15s linear infinite',
+        'marquee-reverse': 'marquee-reverse 15s linear infinite',
+        float: 'float 3s ease-in-out infinite',
+        'fade-in': 'fade-in 1s ease-out',
+        'pulse-glow': 'pulse-glow 2s infinite',
+        'slide-in': 'slide-in 0.5s ease-out',
+      },
     },
   },
   plugins: [],
