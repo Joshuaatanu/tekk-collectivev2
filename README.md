@@ -309,4 +309,4 @@ The website now provides an industry-leading user experience that positions Tekk
 
 ---
 
-*Built with ❤️ by the Tekk Collective team*
+*Built with ❤️ by the Tekk Collective team - Joshua Atanu (Founder & CEO), Olaoluwa Olagun (CTO), and Oyinkansola Soleye (Lead UI/UX Designer)*

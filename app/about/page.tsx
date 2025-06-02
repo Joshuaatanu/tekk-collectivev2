@@ -5,32 +5,25 @@ import { Typewriter } from "react-simple-typewriter";
 
 const team = [
   {
-    name: "Alex Chen",
+    name: "Joshua Atanu",
     role: "Founder & CEO",
-    expertise: "AI & Machine Learning",
-    bio: "Visionary leader with 15+ years in tech innovation and strategic consulting.",
-    image: "/team/alex.jpg"
+    expertise: "Strategic Leadership & Business Development",
+    bio: "Visionary leader driving technological innovation and strategic growth for enterprise clients worldwide.",
+    image: "/team/joshua.jpg"
   },
   {
-    name: "Sarah Rodriguez",
-    role: "CTO",
-    expertise: "Cloud Architecture",
-    bio: "Expert in scalable systems and cloud infrastructure with Fortune 500 experience.",
-    image: "/team/sarah.jpg"
+    name: "Olaoluwa Olagun", 
+    role: "Chief Technology Officer",
+    expertise: "Cloud Architecture & System Design",
+    bio: "Expert in scalable systems and cutting-edge technology implementation with enterprise-grade solutions.",
+    image: "/team/olaoluwa.jpg"
   },
   {
-    name: "Marcus Johnson",
-    role: "Creative Director",
-    expertise: "UX/UI Design",
-    bio: "Award-winning designer focused on human-centered digital experiences.",
-    image: "/team/marcus.jpg"
-  },
-  {
-    name: "Dr. Elena Vasquez",
-    role: "Head of Research",
-    expertise: "Emerging Technologies",
-    bio: "PhD in Computer Science, leading research in quantum computing and blockchain.",
-    image: "/team/elena.jpg"
+    name: "Oyinkansola Soleye",
+    role: "Lead UI/UX Designer",
+    expertise: "User Experience & Interface Design", 
+    bio: "Creative designer crafting intuitive and beautiful digital experiences that users love and businesses need.",
+    image: "/team/oyinkansola.jpg"
   }
 ];
 
@@ -215,7 +208,7 @@ export default function About() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member, index) => (
               <div key={index} className="bg-black/50 border border-white/10 p-8 hover:border-white/30 transition-all duration-700 group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="text-center">
