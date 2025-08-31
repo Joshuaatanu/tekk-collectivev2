@@ -7,10 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        brand: {
+          primary: '#3B82F6', // Blue accent for CTAs
+          secondary: '#1E40AF', // Darker blue for hover states
+          accent: '#60A5FA', // Light blue for highlights
+          glow: 'rgba(59, 130, 246, 0.3)', // Blue glow effect
+        },
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'brand-gradient': 'linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%)',
       },
       keyframes: {
         marquee: {

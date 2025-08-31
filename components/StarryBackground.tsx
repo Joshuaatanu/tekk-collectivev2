@@ -8,12 +8,13 @@ export default function StarryBackground() {
     const createStars = () => {
       if (!starryRef.current) return;
       
-      const starCount = 100; // Increased for all pages
+      // Reduce star count for better performance
+      const starCount = window.innerWidth < 768 ? 50 : 80;
       for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         star.className = 'star';
         
-        const size = Math.random() * 3 + 0.5; // Varied sizes
+        const size = Math.random() * 2 + 0.5; // Smaller sizes for better performance
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
         star.style.left = `${Math.random() * 100}%`;
@@ -25,29 +26,41 @@ export default function StarryBackground() {
       }
     };
 
+    // Throttle mouse movement for better performance
+    let isThrottled = false;
     const handleMouseMove = (e: MouseEvent) => {
-      if (!starryRef.current) return;
+      if (!starryRef.current || isThrottled) return;
       
-      const stars = starryRef.current.querySelectorAll('.star');
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      
-      // Calculate mouse position as percentage from center
-      const mouseX = (clientX / innerWidth - 0.5);
-      const mouseY = (clientY / innerHeight - 0.5);
-      
-      stars.forEach((star: Element, index: number) => {
-        const htmlStar = star as HTMLElement;
+      isThrottled = true;
+      requestAnimationFrame(() => {
+        if (!starryRef.current) return;
         
-        // Different layers move at different speeds
-        const layer = index % 4;
-        const speed = (layer + 1) * 0.3;
-        const maxMove = 15 + (layer * 5);
+        const stars = starryRef.current.querySelectorAll('.star');
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
         
-        const x = mouseX * speed * maxMove;
-        const y = mouseY * speed * maxMove;
+        // Calculate mouse position as percentage from center
+        const mouseX = (clientX / innerWidth - 0.5);
+        const mouseY = (clientY / innerHeight - 0.5);
         
-        htmlStar.style.transform = `translate(${x}px, ${y}px)`;
+        // Only animate every 4th star for better performance
+        stars.forEach((star: Element, index: number) => {
+          if (index % 4 !== 0) return; // Skip 3/4 of stars
+          
+          const htmlStar = star as HTMLElement;
+          
+          // Different layers move at different speeds
+          const layer = index % 3;
+          const speed = (layer + 1) * 0.2; // Reduced speed
+          const maxMove = 10 + (layer * 3); // Reduced movement
+          
+          const x = mouseX * speed * maxMove;
+          const y = mouseY * speed * maxMove;
+          
+          htmlStar.style.transform = `translate(${x}px, ${y}px)`;
+        });
+        
+        isThrottled = false;
       });
     };
 

@@ -318,8 +318,38 @@ html {
 
 /* Enhanced Focus States for Accessibility */
 *:focus {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline: 2px solid #3B82F6;
   outline-offset: 2px;
+  border-radius: 2px;
+}
+
+*:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* High contrast focus for better visibility */
+.focus-ring:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  outline: none;
+}
+
+/* Skip to main content link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #3B82F6;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
 }
 
 /* Smooth transitions for all interactive elements */
@@ -345,6 +375,44 @@ button, a, input, textarea {
   .animate-slide-up { animation-duration: 0.5s; }
   .animate-text-shimmer { animation-duration: 2s; }
 }
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Keep essential animations but make them instant */
+  .animate-scale-in,
+  .animate-slide-up,
+  .animate-slide-left,
+  .animate-text-shimmer,
+  .animate-line-expand,
+  .animate-minimal-pulse,
+  .animate-subtle-morph,
+  .animate-gentle-float,
+  .animate-subtle-glow,
+  .animate-slow-rotate,
+  .animate-float,
+  .animate-twinkle,
+  .animate-reveal-up,
+  .animate-reveal-left {
+    animation: none !important;
+  }
+}
+
+/* Brand accent utilities */
+.text-brand-primary { color: #3B82F6; }
+.text-brand-accent { color: #60A5FA; }
+.bg-brand-primary { background-color: #3B82F6; }
+.bg-brand-gradient { background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); }
+.border-brand-primary { border-color: #3B82F6; }
+.shadow-brand-glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
 
 /* Minimalist Typography */
 h1, h2, h3, h4, h5, h6 {

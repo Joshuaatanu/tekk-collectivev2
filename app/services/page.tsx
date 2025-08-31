@@ -90,22 +90,18 @@ export default function Services() {
               linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
               linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
             `,
-            backgroundSize: '60px 60px',
-            animation: 'grid-pulse 6s ease-in-out infinite'
+            backgroundSize: '60px 60px'
           }}></div>
         </div>
 
         {/* Enhanced Abstract Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-32 left-16 w-24 h-24 border border-white/10 animate-morph"></div>
-          <div className="absolute top-20 right-32 w-1 h-32 bg-gradient-to-b from-white/20 to-transparent animate-line-expand"></div>
-          <div className="absolute bottom-32 left-1/3 w-16 h-16 border-2 border-white/15 rotate-45 animate-particle-float"></div>
-          <div className="absolute top-1/2 right-20 w-32 h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-line-expand" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-20 right-32 w-1 h-32 bg-gradient-to-b from-white/20 to-transparent"></div>
+          <div className="absolute top-1/2 right-20 w-32 h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
           
           {/* Additional floating elements */}
-          <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-white/10 rounded-full animate-glow-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-20 h-20 border border-white/5 animate-geometric-rotate"></div>
-          <div className="absolute top-3/4 left-1/2 w-4 h-4 bg-white/15 animate-particle-float" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-white/10 rounded-full"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-20 h-20 border border-white/5 rounded-full"></div>
         </div>
 
         <Navbar />
@@ -151,8 +147,7 @@ export default function Services() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-white/5 rotate-45 animate-geometric-rotate"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/10 rounded-full animate-border-dance"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/10 rounded-full"></div>
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
@@ -166,13 +161,19 @@ export default function Services() {
                   <div className="w-8 h-px bg-white/20 group-hover:w-20 transition-all duration-700 animate-line-expand"></div>
                 </div>
                 
-                <h3 className="text-3xl md:text-4xl text-white font-thin mb-6 group-hover:text-white/90 transition-colors duration-500">
+                <h3 className="text-3xl md:text-4xl text-white font-thin mb-4 group-hover:text-white/90 transition-colors duration-500">
                   {service.title}
                 </h3>
                 
-                <p className="text-white/60 font-light leading-relaxed mb-12 text-lg group-hover:text-white/70 transition-colors duration-500">
+                <p className="text-white/60 font-light leading-relaxed mb-8 text-lg group-hover:text-white/70 transition-colors duration-500">
                   {service.description}
                 </p>
+                
+                <div className="mb-8">
+                  <h4 className="text-white/80 font-light text-sm tracking-wider uppercase mb-4 group-hover:text-white/90 transition-colors duration-500">
+                    Key Services
+                  </h4>
+                </div>
                 
                 <div className="space-y-4">
                   {service.features.map((feature, featureIndex) => (
@@ -197,12 +198,11 @@ export default function Services() {
       {/* Enhanced Process Section */}
       <section className="py-32 px-6 relative">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent animate-line-expand"></div>
-          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent animate-line-expand" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           
           {/* Floating process indicators */}
-          <div className="absolute top-1/4 left-1/4 w-16 h-16 border border-white/5 animate-float"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-12 h-12 bg-white/5 rounded-full animate-glow-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-12 h-12 bg-white/5 rounded-full"></div>
         </div>
         
         <div className="max-w-6xl mx-auto relative z-10">
@@ -245,9 +245,8 @@ export default function Services() {
       {/* Enhanced CTA Section */}
       <section className="py-32 px-6 relative">
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent animate-line-expand"></div>
-          <div className="absolute top-1/4 right-1/4 w-20 h-20 border border-white/10 animate-morph"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-16 h-16 border border-white/15 rounded-full animate-glow-pulse"></div>
+          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-16 h-16 border border-white/15 rounded-full"></div>
         </div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">

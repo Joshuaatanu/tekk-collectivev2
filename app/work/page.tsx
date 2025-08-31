@@ -2,7 +2,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Typewriter } from "react-simple-typewriter";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const projects = [
   {
@@ -127,6 +127,27 @@ export default function Work() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
+  // Handle keyboard navigation for modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedProject) {
+        setSelectedProject(null);
+      }
+    };
+
+    if (selectedProject) {
+      document.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedProject]);
+
   const filteredProjects = selectedCategory === "All" 
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
@@ -151,7 +172,6 @@ export default function Work() {
 
         {/* Minimal Abstract Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/6 w-18 h-18 border border-white/5 animate-subtle-morph"></div>
           <div className="absolute bottom-1/3 right-1/6 w-14 h-14 border border-white/5 rounded-full animate-gentle-float"></div>
           <div className="absolute top-2/3 right-1/3 w-20 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent animate-line-expand" style={{ animationDelay: '2s' }}></div>
         </div>
@@ -359,11 +379,17 @@ export default function Work() {
 
       {/* Project Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-6 overflow-y-auto">
-          <div className="max-w-4xl w-full bg-black border border-white/20 p-12 relative max-h-[90vh] overflow-y-auto">
+        <div 
+          className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-6 overflow-y-auto"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="project-modal-title"
+        >
+          <div className="max-w-4xl w-full bg-black border border-white/20 p-12 relative max-h-[90vh] overflow-y-auto focus-ring">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-6 right-6 text-white/60 hover:text-white text-2xl font-thin"
+              className="absolute top-6 right-6 text-white/60 hover:text-white text-2xl font-thin focus-ring"
+              aria-label="Close project details"
             >
               ×
             </button>
@@ -378,7 +404,7 @@ export default function Work() {
                     <span className="text-white/40 text-sm font-light tracking-wider uppercase">
                       {project.year} • {project.category}
                     </span>
-                    <h2 className="text-4xl font-thin text-white mt-2 mb-4">{project.title}</h2>
+                    <h2 id="project-modal-title" className="text-4xl font-thin text-white mt-2 mb-4">{project.title}</h2>
                     <p className="text-white/60 font-light">{project.client}</p>
                   </div>
                   

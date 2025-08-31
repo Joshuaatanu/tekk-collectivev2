@@ -49,6 +49,9 @@ export default function Contact() {
   });
 
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -56,6 +59,77 @@ export default function Contact() {
       ...prev,
       [name]: value
     }));
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters long';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '7e09478d-d697-405e-b85e-36cb81615d5c',
+          ...formData
+        })
+      });
+      
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ email: '', name: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleFocus = (fieldName: string) => {
@@ -84,15 +158,12 @@ export default function Contact() {
 
         {/* Enhanced Abstract Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-28 left-24 w-16 h-16 border border-white/10 rotate-45 animate-morph"></div>
           <div className="absolute top-32 right-20 w-1 h-28 bg-gradient-to-b from-white/20 to-transparent animate-line-expand"></div>
           <div className="absolute bottom-32 left-1/3 w-20 h-20 border-2 border-white/15 rounded-full animate-glow-pulse"></div>
           <div className="absolute top-1/2 right-1/3 w-24 h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-line-expand" style={{ animationDelay: '1s' }}></div>
           
           {/* Additional floating elements */}
           <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-white/10 rounded-full animate-particle-float"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/5 animate-geometric-rotate"></div>
-          <div className="absolute top-3/4 left-2/3 w-4 h-4 bg-white/15 animate-particle-float" style={{ animationDelay: '3s' }}></div>
         </div>
 
         <Navbar />
@@ -148,8 +219,7 @@ export default function Contact() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-white/5 rotate-45 animate-geometric-rotate"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/10 rounded-full animate-border-dance"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/10 rounded-full animate-gentle-float"></div>
         </div>
         
         <div className="max-w-6xl mx-auto relative z-10">
@@ -164,19 +234,27 @@ export default function Contact() {
               </div>
               
               <form
-                action="https://api.web3forms.com/submit"
-                method="POST"
+                onSubmit={handleSubmit}
                 className="space-y-8"
+                noValidate
               >
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="7e09478d-d697-405e-b85e-36cb81615d5c"
-                />
+                {submitStatus === 'success' && (
+                  <div className="p-4 border border-green-500/30 bg-green-500/10 text-green-400 rounded" role="alert">
+                    <p className="font-light">Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="p-4 border border-red-500/30 bg-red-500/10 text-red-400 rounded" role="alert">
+                    <p className="font-light">Sorry, there was an error sending your message. Please try again or contact us directly.</p>
+                  </div>
+                )}
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="group relative">
+                    <label htmlFor="name" className="sr-only">Full Name</label>
                     <input
+                      id="name"
                       type="text"
                       name="name"
                       value={formData.name}
@@ -185,13 +263,28 @@ export default function Contact() {
                       onBlur={handleBlur}
                       placeholder="Full Name"
                       required
-                      className="w-full bg-transparent border-b border-white/20 text-white placeholder-white/40 py-4 focus:outline-none focus:border-white/60 transition-all duration-500 font-light hover:border-white/30"
+                      aria-invalid={errors.name ? 'true' : 'false'}
+                      aria-describedby={errors.name ? 'name-error' : undefined}
+                      className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light hover:border-white/30 focus-ring ${
+                        errors.name ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
+                      }`}
                     />
-                    <div className={`absolute bottom-0 left-0 h-px bg-white transition-all duration-500 ${focusedField === 'name' ? 'w-full' : 'w-0'}`}></div>
+                    <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${
+                      focusedField === 'name' 
+                        ? `w-full ${errors.name ? 'bg-red-500' : 'bg-brand-primary'}` 
+                        : 'w-0'
+                    }`}></div>
+                    {errors.name && (
+                      <p id="name-error" className="text-red-400 text-sm mt-2 font-light" role="alert">
+                        {errors.name}
+                      </p>
+                    )}
                   </div>
                   
                   <div className="group relative">
+                    <label htmlFor="email" className="sr-only">Email Address</label>
                     <input
+                      id="email"
                       type="email"
                       name="email"
                       value={formData.email}
@@ -200,14 +293,29 @@ export default function Contact() {
                       onBlur={handleBlur}
                       placeholder="Email Address"
                       required
-                      className="w-full bg-transparent border-b border-white/20 text-white placeholder-white/40 py-4 focus:outline-none focus:border-white/60 transition-all duration-500 font-light hover:border-white/30"
+                      aria-invalid={errors.email ? 'true' : 'false'}
+                      aria-describedby={errors.email ? 'email-error' : undefined}
+                      className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light hover:border-white/30 focus-ring ${
+                        errors.email ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
+                      }`}
                     />
-                    <div className={`absolute bottom-0 left-0 h-px bg-white transition-all duration-500 ${focusedField === 'email' ? 'w-full' : 'w-0'}`}></div>
+                    <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${
+                      focusedField === 'email' 
+                        ? `w-full ${errors.email ? 'bg-red-500' : 'bg-brand-primary'}` 
+                        : 'w-0'
+                    }`}></div>
+                    {errors.email && (
+                      <p id="email-error" className="text-red-400 text-sm mt-2 font-light" role="alert">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
                 
                 <div className="group relative">
+                  <label htmlFor="subject" className="sr-only">Subject</label>
                   <input
+                    id="subject"
                     type="text"
                     name="subject"
                     value={formData.subject}
@@ -216,13 +324,28 @@ export default function Contact() {
                     onBlur={handleBlur}
                     placeholder="Subject"
                     required
-                    className="w-full bg-transparent border-b border-white/20 text-white placeholder-white/40 py-4 focus:outline-none focus:border-white/60 transition-all duration-500 font-light hover:border-white/30"
+                    aria-invalid={errors.subject ? 'true' : 'false'}
+                    aria-describedby={errors.subject ? 'subject-error' : undefined}
+                    className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light hover:border-white/30 focus-ring ${
+                      errors.subject ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
+                    }`}
                   />
-                  <div className={`absolute bottom-0 left-0 h-px bg-white transition-all duration-500 ${focusedField === 'subject' ? 'w-full' : 'w-0'}`}></div>
+                  <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${
+                    focusedField === 'subject' 
+                      ? `w-full ${errors.subject ? 'bg-red-500' : 'bg-brand-primary'}` 
+                      : 'w-0'
+                  }`}></div>
+                  {errors.subject && (
+                    <p id="subject-error" className="text-red-400 text-sm mt-2 font-light" role="alert">
+                      {errors.subject}
+                    </p>
+                  )}
                 </div>
                 
                 <div className="group relative">
+                  <label htmlFor="message" className="sr-only">Tell us about your project</label>
                   <textarea
+                    id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
@@ -231,18 +354,54 @@ export default function Contact() {
                     placeholder="Tell us about your project"
                     required
                     rows={6}
-                    className="w-full bg-transparent border-b border-white/20 text-white placeholder-white/40 py-4 focus:outline-none focus:border-white/60 transition-all duration-500 font-light resize-none hover:border-white/30"
+                    aria-invalid={errors.message ? 'true' : 'false'}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
+                    className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light resize-none hover:border-white/30 focus-ring ${
+                      errors.message ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
+                    }`}
                   ></textarea>
-                  <div className={`absolute bottom-0 left-0 h-px bg-white transition-all duration-500 ${focusedField === 'message' ? 'w-full' : 'w-0'}`}></div>
+                  <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${
+                    focusedField === 'message' 
+                      ? `w-full ${errors.message ? 'bg-red-500' : 'bg-brand-primary'}` 
+                      : 'w-0'
+                  }`}></div>
+                  {errors.message && (
+                    <p id="message-error" className="text-red-400 text-sm mt-2 font-light" role="alert">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
                 
                 <button
                   type="submit"
-                  className="group px-12 py-4 border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-700 font-light tracking-wide relative overflow-hidden"
+                  disabled={isSubmitting}
+                  className={`group px-12 py-4 border font-light tracking-wide relative overflow-hidden focus-ring transition-all duration-700 ${
+                    isSubmitting 
+                      ? 'border-white/20 text-white/50 cursor-not-allowed' 
+                      : 'border-brand-primary/50 bg-brand-gradient text-white hover:bg-brand-secondary hover:border-brand-secondary shadow-brand-glow hover:shadow-lg'
+                  }`}
+                  aria-describedby="submit-status"
                 >
-                  <span className="relative z-10">Send Message</span>
-                  <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
+                  <span className="relative z-10 flex items-center justify-center">
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      'Send Message'
+                    )}
+                  </span>
+                  {!isSubmitting && (
+                    <div className="absolute inset-0 bg-brand-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
+                  )}
                 </button>
+                <div id="submit-status" className="sr-only" aria-live="polite">
+                  {isSubmitting ? 'Sending your message...' : submitStatus === 'success' ? 'Message sent successfully!' : submitStatus === 'error' ? 'Error sending message' : ''}
+                </div>
               </form>
             </div>
 
@@ -323,7 +482,6 @@ export default function Contact() {
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent animate-line-expand" style={{ animationDelay: '1s' }}></div>
           
           {/* Floating response indicators */}
-          <div className="absolute top-1/4 left-1/4 w-20 h-20 border border-white/5 animate-float"></div>
           <div className="absolute bottom-1/4 right-1/4 w-16 h-16 bg-white/5 rounded-full animate-glow-pulse"></div>
         </div>
         

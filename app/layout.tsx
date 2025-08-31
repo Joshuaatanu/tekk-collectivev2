@@ -63,9 +63,14 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
       </head>
       <body className={`${inter.className} antialiased`}>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <StarryBackground />
         <PageTransition>
-          {children}
+          <main id="main-content">
+            {children}
+          </main>
         </PageTransition>
         
         {/* Performance monitoring script placeholder */}

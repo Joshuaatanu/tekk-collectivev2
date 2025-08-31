@@ -62,16 +62,14 @@ export default function About() {
               linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
               linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
             `,
-            backgroundSize: '70px 70px',
-            animation: 'grid-pulse 8s ease-in-out infinite'
+            backgroundSize: '70px 70px'
           }}></div>
         </div>
 
         {/* Minimal Abstract Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/3 left-1/5 w-20 h-20 border border-white/5 animate-subtle-morph"></div>
-          <div className="absolute bottom-1/4 right-1/5 w-16 h-16 border border-white/5 rounded-full animate-gentle-float"></div>
-          <div className="absolute top-1/2 right-1/4 w-24 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent animate-line-expand" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-1/4 right-1/5 w-16 h-16 border border-white/5 rounded-full"></div>
+          <div className="absolute top-1/2 right-1/4 w-24 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </div>
 
         <Navbar />
@@ -91,9 +89,9 @@ export default function About() {
               </span>
             </h1>
             <div className="flex items-center justify-center mb-8">
-              <div className="w-16 h-px bg-white/30 animate-line-expand"></div>
-              <div className="mx-6 w-2 h-2 bg-white/40 rounded-full animate-minimal-pulse"></div>
-              <div className="w-16 h-px bg-white/30 animate-line-expand"></div>
+              <div className="w-16 h-px bg-white/30"></div>
+              <div className="mx-6 w-2 h-2 bg-white/40 rounded-full"></div>
+              <div className="w-16 h-px bg-white/30"></div>
             </div>
             <p className="text-xl md:text-2xl text-white/70 font-light tracking-wide max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.5s' }}>
               The minds behind the future of technology consulting
@@ -157,9 +155,9 @@ export default function About() {
               Our Values
             </h2>
             <div className="flex items-center justify-center mb-8">
-              <div className="w-16 h-px bg-white/30 animate-line-expand"></div>
-              <div className="mx-6 w-2 h-2 bg-white/40 rounded-full animate-minimal-pulse"></div>
-              <div className="w-16 h-px bg-white/30 animate-line-expand"></div>
+              <div className="w-16 h-px bg-white/30"></div>
+              <div className="mx-6 w-2 h-2 bg-white/40 rounded-full"></div>
+              <div className="w-16 h-px bg-white/30"></div>
             </div>
           </div>
           
@@ -190,7 +188,6 @@ export default function About() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
-          <div className="absolute bottom-1/4 left-1/5 w-24 h-24 border border-white/3 rotate-45 animate-slow-rotate"></div>
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
@@ -199,9 +196,9 @@ export default function About() {
               Meet the Team
             </h2>
             <div className="flex items-center justify-center mb-8">
-              <div className="w-16 h-px bg-white/30 animate-line-expand"></div>
-              <div className="mx-6 w-2 h-2 bg-white/40 rounded-full animate-minimal-pulse"></div>
-              <div className="w-16 h-px bg-white/30 animate-line-expand"></div>
+              <div className="w-16 h-px bg-white/30"></div>
+              <div className="mx-6 w-2 h-2 bg-white/40 rounded-full"></div>
+              <div className="w-16 h-px bg-white/30"></div>
             </div>
             <p className="text-xl text-white/70 font-light max-w-3xl mx-auto">
               The brilliant minds driving innovation and excellence in every project
@@ -212,21 +209,23 @@ export default function About() {
             {team.map((member, index) => (
               <div key={index} className="bg-black/50 border border-white/10 p-8 hover:border-white/30 transition-all duration-700 group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-6 bg-white/10 rounded-full flex items-center justify-center text-4xl font-thin text-white group-hover:bg-white/20 transition-colors duration-500">
+                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 border border-brand-primary/30 rounded-full flex items-center justify-center text-4xl font-thin text-white group-hover:from-brand-primary/30 group-hover:to-brand-secondary/30 group-hover:border-brand-primary/50 transition-all duration-500">
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   
-                  <h3 className="text-xl font-thin text-white mb-2 group-hover:text-white/90 transition-colors duration-500">
+                  <h3 className="text-xl font-thin text-white mb-1 group-hover:text-white/90 transition-colors duration-500">
                     {member.name}
                   </h3>
                   
-                  <p className="text-white/60 font-light mb-2 group-hover:text-white/70 transition-colors duration-500">
+                  <p className="text-brand-accent font-light mb-1 text-sm tracking-wide group-hover:text-brand-primary transition-colors duration-500">
                     {member.role}
                   </p>
                   
-                  <p className="text-white/40 text-sm font-light mb-4 group-hover:text-white/50 transition-colors duration-500">
+                  <p className="text-white/40 text-xs font-light mb-4 tracking-wider uppercase group-hover:text-white/50 transition-colors duration-500">
                     {member.expertise}
                   </p>
+                  
+                  <div className="w-8 h-px bg-brand-primary/30 mx-auto mb-4 group-hover:w-16 group-hover:bg-brand-primary/50 transition-all duration-500"></div>
                   
                   <p className="text-white/50 text-sm font-light leading-relaxed group-hover:text-white/60 transition-colors duration-500">
                     {member.bio}
