@@ -6,7 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 const team = [
   {
     name: "Joshua Atanu",
-    role: "Founder & CEO",
+    role: "Founder ",
     expertise: "Strategic Leadership & Business Development",
     bio: "Visionary leader driving technological innovation and strategic growth for enterprise clients worldwide.",
     image: "/team/joshua.jpg"
@@ -20,7 +20,7 @@ const team = [
   },
   {
     name: "Oyinkansola Soleye",
-    role: "Co-Founder & Lead UI/UX Designer",
+    role: "Co-Founder",
     expertise: "User Experience & Interface Design", 
     bio: "Creative designer crafting intuitive and beautiful digital experiences that users love and businesses need.",
     image: "/team/oyinkansola.jpg"
