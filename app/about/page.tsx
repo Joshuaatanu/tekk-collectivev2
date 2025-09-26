@@ -20,7 +20,7 @@ const team = [
   },
   {
     name: "Oyinkansola Soleye",
-    role: "Lead UI/UX Designer",
+    role: "Co-Founder & Lead UI/UX Designer",
     expertise: "User Experience & Interface Design", 
     bio: "Creative designer crafting intuitive and beautiful digital experiences that users love and businesses need.",
     image: "/team/oyinkansola.jpg"
