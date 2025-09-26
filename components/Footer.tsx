@@ -29,18 +29,18 @@ export default function Footer() {
           <div className="animate-slide-up">
             <h5 className="text-white font-light text-lg mb-6 tracking-wide">Company</h5>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Careers</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Project</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Contact</a></li>
+              <li><a href="/careers" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Careers</a></li>
+              <li><a href="/project" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Project</a></li>
+              <li><a href="/contact" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Contact</a></li>
             </ul>
           </div>
           
           <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <h5 className="text-white font-light text-lg mb-6 tracking-wide">Services</h5>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Consulting</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Design</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Support</a></li>
+              <li><a href="/services" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Consulting</a></li>
+              <li><a href="/services" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Design</a></li>
+              <li><a href="/contact" className="text-white/70 hover:text-white transition-colors duration-300 font-light">Support</a></li>
             </ul>
           </div>
           
