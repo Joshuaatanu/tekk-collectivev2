@@ -12,7 +12,7 @@ const team = [
     image: "/team/joshua.jpg"
   },
   {
-    name: "Olaoluwa Olagun", 
+    name: "Olaoluwa Olaogun", 
     role: "Chief Technology Officer",
     expertise: "Cloud Architecture & System Design",
     bio: "Expert in scalable systems and cutting-edge technology implementation with enterprise-grade solutions.",
