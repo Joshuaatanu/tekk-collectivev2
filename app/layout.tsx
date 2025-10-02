@@ -10,6 +10,7 @@ const inter = Inter({
 })
 
 export const metadata = {
+  metadataBase: new URL('https://tekkcollective.com'),
   title: {
     default: 'Tekk Collective - Technology Consulting Excellence',
     template: '%s | Tekk Collective'
@@ -32,7 +33,8 @@ export const metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Tekk Collective - Technology Consulting'
+        alt: 'Tekk Collective - Technology Consulting',
+        type: 'image/jpeg'
       }
     ]
   },

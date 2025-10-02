@@ -1,7 +1,6 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { Typewriter } from "react-simple-typewriter";
 
 const team = [
   {
@@ -66,11 +65,9 @@ export default function About() {
           }}></div>
         </div>
 
-        {/* Minimal Abstract Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute bottom-1/4 right-1/5 w-16 h-16 border border-white/5 rounded-full"></div>
-          <div className="absolute top-1/2 right-1/4 w-24 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-        </div>
+        {/* Blurred Background Layer */}
+        <div className="absolute inset-0 backdrop-blur-sm bg-black/20"></div>
+
 
         <Navbar />
         
@@ -78,14 +75,7 @@ export default function About() {
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
               <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent animate-text-shimmer bg-[length:200%_100%]">
-                <Typewriter
-                  words={['ABOUT']}
-                  loop={1}
-                  cursor
-                  cursorStyle='|'
-                  typeSpeed={120}
-                  deleteSpeed={80}
-                />
+                ABOUT
               </span>
             </h1>
             <div className="flex items-center justify-center mb-8">
@@ -115,6 +105,8 @@ export default function About() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
         </div>
+        {/* Background Blur Layer */}
+        <div className="absolute inset-0 backdrop-blur-[2px] bg-black/10"></div>
         
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl font-thin text-white mb-12 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent animate-slide-up">
@@ -146,8 +138,9 @@ export default function About() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-          <div className="absolute top-1/3 right-1/4 w-18 h-18 bg-white/3 rounded-full animate-subtle-glow"></div>
         </div>
+        {/* Background Blur Layer */}
+        <div className="absolute inset-0 backdrop-blur-[1px] bg-black/5"></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20 animate-slide-up">

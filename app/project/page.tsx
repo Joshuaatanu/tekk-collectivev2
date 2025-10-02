@@ -1,7 +1,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Typewriter } from "react-simple-typewriter";
 
 const projects = [
   {
@@ -83,14 +82,7 @@ export default function Projects() {
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
               <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent animate-text-shimmer bg-[length:200%_100%]">
-                <Typewriter
-                  words={['PROJECTS']}
-                  loop={1}
-                  cursor
-                  cursorStyle='|'
-                  typeSpeed={120}
-                  deleteSpeed={80}
-                />
+                PROJECTS
               </span>
             </h1>
             <div className="flex items-center justify-center mb-8">
@@ -280,14 +272,20 @@ export default function Projects() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-              <button className="group px-12 py-4 border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-700 font-light tracking-wide relative overflow-hidden">
+              <a 
+                href="/contact"
+                className="group px-12 py-4 border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-700 font-light tracking-wide relative overflow-hidden inline-block"
+              >
                 <span className="relative z-10">Discuss Your Project</span>
                 <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-              </button>
-              <button className="text-white/70 hover:text-white transition-colors duration-500 underline underline-offset-4 font-light group">
+              </a>
+              <a 
+                href="/work"
+                className="text-white/70 hover:text-white transition-colors duration-500 underline underline-offset-4 font-light group inline-block"
+              >
                 <span>View All Projects</span>
                 <div className="w-0 group-hover:w-full h-px bg-white transition-all duration-500 mt-2"></div>
-              </button>
+              </a>
             </div>
           </div>
         </div>

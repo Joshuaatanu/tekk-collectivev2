@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekk Collective Service Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            background: #000000;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        /* Background Effects */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.3;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: transparent;
+            padding: 60px 40px;
+            position: relative;
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+        }
+        
+        h1 {
+            color: #ffffff;
+            font-size: 3.5rem;
+            font-weight: 100;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ffffff, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #ffffff;
+            margin: 50px 0 25px 0;
+            font-size: 2.2rem;
+            font-weight: 100;
+            letter-spacing: 0.05em;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.3));
+        }
+        
+        h3 {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 30px 0 15px 0;
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        ul {
+            margin: 20px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+        
+        li::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+        
+        strong {
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
+        }
+        
+        .service-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-box::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .service-box:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .service-box::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            width: 12px;
+            height: 12px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .highlight {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+        
+        .highlight::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2));
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 50px;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-info h2 {
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info h3 {
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info p, .contact-info li {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 300;
+        }
+        
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+            margin: 40px auto;
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .floating-element:nth-child(1) {
+            top: 20%;
+            right: 10%;
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+        }
+        
+        .floating-element:nth-child(2) {
+            top: 60%;
+            left: 5%;
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-box {
+                padding: 20px;
+            }
+        }
+        
+        @media print {
+            body { 
+                background: #000; 
+                color: #fff;
+            }
+            body::before { display: none; }
+            .container { padding: 20px; }
+            .service-box, .highlight, .contact-info {
+                border: 1px solid #333;
+                background: #111;
+            }
+        }
+        
+        /* Smooth animations */
+        .service-box, .highlight, .contact-info {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>SERVICE GUIDE</h1>
+            <p class="subtitle">Your Complete Guide to Technology Consulting Excellence</p>
+        </div>
+        
+        <div class="highlight">
+            <strong>Founded in 2019</strong>, we've successfully guided over 500 companies through their digital transformation journeys, from ambitious startups to Fortune 500 enterprises.
+        </div>
+
+        <div class="divider"></div>
+        
+        <h2>🎯 About Tekk Collective</h2>
+        <p>Tekk Collective is a leading technology consulting firm specializing in digital transformation, custom software development, and innovative business solutions. We combine cutting-edge technology with human-centered design to create solutions that serve both business objectives and user needs.</p>
+
+        <h3>Our Mission</h3>
+        <p>To amplify human potential through technology, creating solutions that serve both business objectives and user needs.</p>
+
+        <h3>Our Values</h3>
+        <ul>
+            <li><strong>Innovation First:</strong> Pushing boundaries and staying ahead of technological curves</li>
+            <li><strong>Human-Centered:</strong> Technology that serves people, not the other way around</li>
+            <li><strong>Sustainable Growth:</strong> Building for the long term with responsible, ethical solutions</li>
+            <li><strong>Transparent Process:</strong> Open communication and clear processes throughout</li>
+        </ul>
+
+        <div class="divider"></div>
+        
+        <h2>💼 Our Services</h2>
+
+        <div class="service-box">
+            <h3>1. Strategy Consulting</h3>
+            <p><strong>Transform your business with strategic technology planning</strong></p>
+            <ul>
+                <li>Digital Transformation Planning</li>
+                <li>Technology Roadmapping</li>
+                <li>Business Process Optimization</li>
+                <li>Innovation Workshops</li>
+            </ul>
+            <p><strong>Timeline:</strong> 4-8 weeks</p>
+        </div>
+
+        <div class="service-box">
+            <h3>2. Software Development</h3>
+            <p><strong>Custom solutions built with modern technologies</strong></p>
+            <ul>
+                <li>Web Applications (React, Next.js, Angular)</li>
+                <li>Mobile Applications (React Native, Flutter)</li>
+                <li>API Development (Node.js, Python, Go)</li>
+                <li>System Integration</li>
+            </ul>
+            <p><strong>Timeline:</strong> 8-24 weeks</p>
+        </div>
+
+        <div class="service-box">
+            <h3>3. Cloud Solutions</h3>
+            <p><strong>Scalable infrastructure for modern businesses</strong></p>
+            <ul>
+                <li>Cloud Architecture Design</li>
+                <li>Migration Services (AWS, Azure, GCP)</li>
+                <li>DevOps Implementation</li>
+                <li>Infrastructure Automation</li>
+            </ul>
+            <p><strong>Timeline:</strong> 6-16 weeks</p>
+        </div>
+
+        <div class="service-box">
+            <h3>4. Data & Analytics</h3>
+            <p><strong>Transform data into actionable insights</strong></p>
+            <ul>
+                <li>Data Strategy Development</li>
+                <li>Business Intelligence Solutions</li>
+                <li>Machine Learning Implementation</li>
+                <li>Data Visualization Dashboards</li>
+            </ul>
+            <p><strong>Timeline:</strong> 8-20 weeks</p>
+        </div>
+
+        <div class="service-box">
+            <h3>5. Cybersecurity</h3>
+            <p><strong>Comprehensive protection for your digital assets</strong></p>
+            <ul>
+                <li>Security Assessment & Audits</li>
+                <li>Compliance Management (SOC2, HIPAA, GDPR)</li>
+                <li>Incident Response Planning</li>
+                <li>Security Training Programs</li>
+            </ul>
+            <p><strong>Timeline:</strong> 4-12 weeks</p>
+        </div>
+
+        <div class="service-box">
+            <h3>6. Digital Innovation</h3>
+            <p><strong>Emerging technology integration</strong></p>
+            <ul>
+                <li>AI/ML Integration</li>
+                <li>IoT Solutions</li>
+                <li>Blockchain Development</li>
+                <li>Emerging Tech Advisory</li>
+            </ul>
+            <p><strong>Timeline:</strong> 8-24 weeks</p>
+        </div>
+
+        <div class="divider"></div>
+        
+        <h2>🔄 Our Process</h2>
+        
+        <h3>Phase 1: Discovery (1-2 weeks)</h3>
+        <p>Understanding your business inside and out through stakeholder interviews, system analysis, and requirements gathering.</p>
+
+        <h3>Phase 2: Strategy (1-2 weeks)</h3>
+        <p>Developing your custom solution with architecture design, technology selection, and detailed planning.</p>
+
+        <h3>Phase 3: Implementation (4-20+ weeks)</h3>
+        <p>Building your solution with agile methodology, regular updates, and continuous testing.</p>
+
+        <h3>Phase 4: Optimization (Ongoing)</h3>
+        <p>Continuous improvement with performance monitoring, user feedback analysis, and ongoing support.</p>
+
+        <div class="divider"></div>
+        
+        <h2>💡 Case Studies</h2>
+        
+        <div class="highlight">
+            <h3>E-commerce Platform Transformation</h3>
+            <p><strong>Results:</strong> 300% increase in conversion rate, 50% reduction in load times</p>
+            <p><strong>Timeline:</strong> 16 weeks</p>
+        </div>
+
+        <div class="highlight">
+            <h3>Healthcare Data Analytics</h3>
+            <p><strong>Results:</strong> 40% improvement in patient outcomes, $2M cost savings</p>
+            <p><strong>Timeline:</strong> 20 weeks</p>
+        </div>
+
+        <div class="divider"></div>
+        
+        <h2>💰 Pricing Models</h2>
+        
+        <h3>Our Rates</h3>
+        <ul>
+            <li>Senior Consultant: $200-250/hour</li>
+            <li>Software Developer: $150-200/hour</li>
+            <li>Project Manager: $175-225/hour</li>
+            <li>Designer: $125-175/hour</li>
+            <li>DevOps Engineer: $175-225/hour</li>
+        </ul>
+
+        <h3>Engagement Models</h3>
+        <ul>
+            <li><strong>Fixed Price Projects:</strong> Well-defined projects with clear scope</li>
+            <li><strong>Time & Materials:</strong> Evolving projects requiring flexibility</li>
+            <li><strong>Retainer Agreements:</strong> Ongoing development and support</li>
+        </ul>
+
+        <div class="divider"></div>
+        
+        <h2>🚀 Getting Started</h2>
+        
+        <h3>Step 1: Initial Consultation (Free)</h3>
+        <p>30-minute discovery call with high-level requirements discussion and preliminary estimates.</p>
+
+        <h3>Step 2: Detailed Assessment (Paid Discovery)</h3>
+        <p>Comprehensive requirements gathering and detailed project proposal.</p>
+
+        <h3>Step 3: Project Kickoff</h3>
+        <p>Contract finalization, team introduction, and development environment setup.</p>
+
+        <div class="contact-info">
+            <h2>📞 Contact Information</h2>
+            <p><strong>Email:</strong> atanu@tekkcollective.com</p>
+            <p><strong>Phone:</strong> +447375433203</p>
+
+            <h3>Response Times</h3>
+            <ul>
+                <li>Emergency Support: &lt; 1 Hour</li>
+                <li>General Inquiries: &lt; 24 Hours</li>
+                <li>Project Proposals: &lt; 48 Hours</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <div class="divider"></div>
+            <p>&copy; 2024 Tekk Collective. All rights reserved.</p>
+            <p>This guide is updated quarterly to reflect our latest services and capabilities.</p>
+            <p><strong>Last updated:</strong> December 2024</p>
+        </div>
+    </div>
+</body>
+</html>

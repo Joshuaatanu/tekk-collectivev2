@@ -3,11 +3,10 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
-import { Typewriter } from "react-simple-typewriter";
 
 export default function Home() {
   return (
-    <div className="bg-black min-h-screen overflow-hidden">
+    <div className="bg-black min-h-screen overflow-hidden" role="main" aria-label="Tekk Collective Homepage">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         {/* Subtle Background Grid */}
@@ -21,11 +20,9 @@ export default function Home() {
           }}></div>
         </div>
 
-        {/* Minimal Abstract Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute bottom-1/3 right-1/4 w-12 h-12 border border-white/5 rounded-full"></div>
-          <div className="absolute top-1/2 right-1/3 w-20 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-        </div>
+        {/* Blurred Background Layer */}
+        <div className="absolute inset-0 backdrop-blur-[2px] bg-black/10"></div>
+
 
         <Navbar />
         
@@ -33,14 +30,7 @@ export default function Home() {
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
               <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent animate-text-shimmer bg-[length:200%_100%]">
-                <Typewriter
-                  words={['TEKK COLLECTIVE']}
-                  loop={1}
-                  cursor
-                  cursorStyle='|'
-                  typeSpeed={120}
-                  deleteSpeed={80}
-                />
+                TEKK COLLECTIVE
               </span>
             </h1>
             <div className="flex items-center justify-center mb-8">
@@ -269,6 +259,48 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Tekk Collective",
+            "url": "https://tekkcollective.com",
+            "logo": "https://tekkcollective.com/tekk-collective-logo.svg",
+            "description": "Technology consulting firm specializing in digital transformation, AI solutions, cloud architecture, and strategic technology planning.",
+            "founder": {
+              "@type": "Person",
+              "name": "Joshua Atanu"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "US"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "atanu@tekkcollective.com",
+              "telephone": "+447375433203",
+              "contactType": "customer service"
+            },
+            "sameAs": [
+              "https://linkedin.com/company/tekk-collective",
+              "https://twitter.com/tekkcollective"
+            ],
+            "services": [
+              "Technology Consulting",
+              "Digital Transformation",
+              "AI Solutions",
+              "Cloud Architecture",
+              "Software Development",
+              "Cybersecurity"
+            ]
+          })
+        }}
+      />
 
       <Footer />
     </div>

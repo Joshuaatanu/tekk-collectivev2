@@ -46,6 +46,27 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  
+  /* Blur Effect Utilities */
+  .blur-bg-light {
+    backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .blur-bg-medium {
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .blur-bg-heavy {
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .blur-element {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.02);
+  }
 }
 
 /* Enhanced Scrollbar */

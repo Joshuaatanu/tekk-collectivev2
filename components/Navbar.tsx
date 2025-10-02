@@ -45,6 +45,7 @@ export default function Navbar() {
     { href: '/project', label: 'Project' },
     { href: '/work', label: 'Work' },
     { href: '/blog', label: 'Blog' },
+    { href: '/careers', label: 'Careers' },
     { href: '/contact', label: 'Contact' },
   ];
 

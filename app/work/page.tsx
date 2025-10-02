@@ -1,7 +1,6 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { Typewriter } from "react-simple-typewriter";
 import { useState, useEffect } from "react";
 
 const projects = [
@@ -182,14 +181,7 @@ export default function Work() {
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
               <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent animate-text-shimmer bg-[length:200%_100%]">
-                <Typewriter
-                  words={['WORK']}
-                  loop={1}
-                  cursor
-                  cursorStyle='|'
-                  typeSpeed={120}
-                  deleteSpeed={80}
-                />
+                WORK
               </span>
             </h1>
             <div className="flex items-center justify-center mb-8">

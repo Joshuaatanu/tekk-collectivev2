@@ -1,7 +1,6 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { Typewriter } from "react-simple-typewriter";
 
 const services = [
   {
@@ -94,15 +93,9 @@ export default function Services() {
           }}></div>
         </div>
 
-        {/* Enhanced Abstract Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 right-32 w-1 h-32 bg-gradient-to-b from-white/20 to-transparent"></div>
-          <div className="absolute top-1/2 right-20 w-32 h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
-          
-          {/* Additional floating elements */}
-          <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-white/10 rounded-full"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-20 h-20 border border-white/5 rounded-full"></div>
-        </div>
+        {/* Blurred Background Layer */}
+        <div className="absolute inset-0 backdrop-blur-sm bg-black/15"></div>
+
 
         <Navbar />
         
@@ -110,14 +103,7 @@ export default function Services() {
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
               <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent animate-text-shimmer bg-[length:200%_100%]">
-                <Typewriter
-                  words={['SERVICES']}
-                  loop={1}
-                  cursor
-                  cursorStyle='|'
-                  typeSpeed={120}
-                  deleteSpeed={80}
-                />
+                SERVICES
               </span>
             </h1>
             <div className="flex items-center justify-center mb-8">
@@ -147,8 +133,9 @@ export default function Services() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/10 rounded-full"></div>
         </div>
+        {/* Background Blur Layer */}
+        <div className="absolute inset-0 backdrop-blur-[1px] bg-black/8"></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5">
@@ -259,14 +246,22 @@ export default function Services() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-              <button className="group px-12 py-4 border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-700 font-light tracking-wide relative overflow-hidden">
+              <a 
+                href="/contact"
+                className="group px-12 py-4 border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-700 font-light tracking-wide relative overflow-hidden inline-block"
+              >
                 <span className="relative z-10">Schedule Consultation</span>
                 <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-              </button>
-              <button className="text-white/70 hover:text-white transition-colors duration-500 underline underline-offset-4 font-light group">
-                <span>Download Service Guide</span>
+              </a>
+              <a 
+                href="/documents/service-guide.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors duration-500 underline underline-offset-4 font-light group inline-block"
+              >
+                <span>View Service Guide</span>
                 <div className="w-0 group-hover:w-full h-px bg-white transition-all duration-500 mt-2"></div>
-              </button>
+              </a>
             </div>
           </div>
         </div>

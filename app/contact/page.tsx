@@ -2,7 +2,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import React, { useState } from "react";
-import { Typewriter } from "react-simple-typewriter";
 
 function printFormattedDate(date: Date): string {
   const daysOfWeek = [
@@ -156,15 +155,9 @@ export default function Contact() {
           }}></div>
         </div>
 
-        {/* Enhanced Abstract Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-32 right-20 w-1 h-28 bg-gradient-to-b from-white/20 to-transparent animate-line-expand"></div>
-          <div className="absolute bottom-32 left-1/3 w-20 h-20 border-2 border-white/15 rounded-full animate-glow-pulse"></div>
-          <div className="absolute top-1/2 right-1/3 w-24 h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-line-expand" style={{ animationDelay: '1s' }}></div>
-          
-          {/* Additional floating elements */}
-          <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-white/10 rounded-full animate-particle-float"></div>
-        </div>
+        {/* Blurred Background Layer */}
+        <div className="absolute inset-0 backdrop-blur-sm bg-black/12"></div>
+
 
         <Navbar />
         
@@ -172,14 +165,7 @@ export default function Contact() {
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
               <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent animate-text-shimmer bg-[length:200%_100%]">
-                <Typewriter
-                  words={['CONNECT']}
-                  loop={1}
-                  cursor
-                  cursorStyle='|'
-                  typeSpeed={120}
-                  deleteSpeed={80}
-                />
+                CONNECT
               </span>
             </h1>
             <div className="flex items-center justify-center mb-8">
@@ -420,7 +406,7 @@ export default function Contact() {
                     Email
                   </h3>
                   <p className="text-white font-light text-xl group-hover:text-white/90 transition-colors duration-300">
-                    hello@tekkcollective.com
+                    atanu@tekkcollective.com
                   </p>
                   <div className="w-8 h-px bg-white/20 mt-4 group-hover:w-20 transition-all duration-700"></div>
                   
@@ -433,7 +419,7 @@ export default function Contact() {
                     Phone
                   </h3>
                   <p className="text-white font-light text-xl group-hover:text-white/90 transition-colors duration-300">
-                    +1 (555) 123-4567
+                    +447375433203
                   </p>
                   <div className="w-8 h-px bg-white/20 mt-4 group-hover:w-20 transition-all duration-700"></div>
                   
@@ -441,34 +427,6 @@ export default function Contact() {
                   <div className="absolute top-2 right-2 w-4 h-4 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-300"></div>
                 </div>
                 
-                <div className="group relative p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/2">
-                  <h3 className="text-white/50 font-light text-sm tracking-wider uppercase mb-4 group-hover:text-white/70 transition-colors duration-300">
-                    Office
-                  </h3>
-                  <p className="text-white font-light text-xl group-hover:text-white/90 transition-colors duration-300">
-                    123 Innovation Drive<br />
-                    Tech District, CA 94105
-                  </p>
-                  <div className="w-8 h-px bg-white/20 mt-4 group-hover:w-20 transition-all duration-700"></div>
-                  
-                  {/* Corner accent */}
-                  <div className="absolute top-2 right-2 w-4 h-4 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-300"></div>
-                </div>
-                
-                <div className="group relative p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/2">
-                  <h3 className="text-white/50 font-light text-sm tracking-wider uppercase mb-4 group-hover:text-white/70 transition-colors duration-300">
-                    Business Hours
-                  </h3>
-                  <div className="space-y-2 text-white font-light group-hover:text-white/90 transition-colors duration-300">
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
-                    <p>Saturday: 10:00 AM - 4:00 PM PST</p>
-                    <p>Sunday: Closed</p>
-                  </div>
-                  <div className="w-8 h-px bg-white/20 mt-4 group-hover:w-20 transition-all duration-700"></div>
-                  
-                  {/* Corner accent */}
-                  <div className="absolute top-2 right-2 w-4 h-4 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-300"></div>
-                </div>
               </div>
             </div>
           </div>
@@ -514,6 +472,101 @@ export default function Contact() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-32 px-6 relative">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+          <div className="absolute top-1/3 left-1/4 w-20 h-20 border border-white/5 rounded-full animate-gentle-float"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
+              Frequently Asked Questions
+            </h2>
+            <div className="flex items-center justify-center mb-8">
+              <div className="w-16 h-px bg-white/30"></div>
+              <div className="mx-6 w-2 h-2 bg-white/40 rounded-full"></div>
+              <div className="w-16 h-px bg-white/30"></div>
+            </div>
+            <p className="text-xl text-white/70 font-light max-w-2xl mx-auto">
+              Common questions about our services, process, and how we can help your business
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            {[
+              {
+                question: "What services does Tekk Collective offer?",
+                answer: "We provide comprehensive technology consulting services including strategy consulting, custom software development, cloud solutions, data & analytics, cybersecurity, and digital innovation. Our team specializes in helping businesses transform through technology while focusing on measurable business outcomes."
+              },
+              {
+                question: "How long does a typical project take?",
+                answer: "Project timelines vary based on scope and complexity. Strategy consulting projects typically take 4-8 weeks, while software development projects range from 8-24 weeks. We provide detailed timelines during our initial consultation and maintain transparent communication throughout the project lifecycle."
+              },
+              {
+                question: "Do you work with startups or just large enterprises?",
+                answer: "We work with companies of all sizes, from early-stage startups to Fortune 500 enterprises. Our approach scales to match your needs, budget, and growth stage. We believe great technology solutions should be accessible to businesses at every level."
+              },
+              {
+                question: "What makes Tekk Collective different from other consulting firms?",
+                answer: "Our unique combination of technical expertise, design thinking, and business acumen sets us apart. We don't just deliver technology—we ensure it drives real business value. Our team includes experienced developers, designers, and strategists who work collaboratively to solve complex challenges."
+              },
+              {
+                question: "How do you ensure project success?",
+                answer: "We use proven methodologies including agile development, regular client communication, milestone-based delivery, and continuous testing. Our 95% project success rate comes from clear expectation setting, transparent processes, and our commitment to delivering measurable results."
+              },
+              {
+                question: "Can you work with our existing team and tools?",
+                answer: "Absolutely. We excel at integrating with existing teams and workflows. We can work within your current processes, tools, and methodologies, or help you adopt new ones that better serve your goals. Collaboration and knowledge transfer are core to our approach."
+              },
+              {
+                question: "What if our requirements change during the project?",
+                answer: "We embrace change through agile methodologies. When requirements evolve, we work with you to assess the impact and adjust scope, timeline, and resources accordingly. Our flexible approach ensures we deliver what you actually need, not just what was originally specified."
+              },
+              {
+                question: "Do you provide ongoing support after project completion?",
+                answer: "Yes, we offer various support packages including maintenance, updates, monitoring, feature enhancements, and technical support. We believe in long-term partnerships and are committed to your continued success beyond project delivery."
+              },
+              {
+                question: "How do you handle data security and confidentiality?",
+                answer: "Security and confidentiality are paramount. We sign NDAs, follow industry-standard security practices, implement secure development methodologies, and can work within your existing security frameworks. All intellectual property and work product belongs to you."
+              },
+              {
+                question: "What's the best way to get started?",
+                answer: "Start with our free 30-minute consultation where we'll discuss your goals, challenges, and explore how we can help. From there, we can provide a detailed assessment and proposal tailored to your specific needs. Contact us using the form above or email us directly."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="bg-black/30 border border-white/10 p-8 hover:border-white/20 transition-all duration-500 group animate-scale-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                <h3 className="text-xl font-light text-white mb-4 group-hover:text-white/90 transition-colors duration-300">
+                  {faq.question}
+                </h3>
+                <p className="text-white/60 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-300">
+                  {faq.answer}
+                </p>
+                
+                {/* Corner accent */}
+                <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-16 animate-slide-up" style={{ animationDelay: '0.5s' }}>
+            <p className="text-white/60 font-light mb-6">
+              Still have questions? We're here to help.
+            </p>
+            <a 
+              href="mailto:atanu@tekkcollective.com"
+              className="inline-flex items-center px-8 py-3 border border-white/30 text-white font-light hover:bg-white hover:text-black transition-all duration-500 group"
+            >
+              <span className="relative z-10">Get in Touch</span>
+              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            </a>
           </div>
         </div>
       </section>
