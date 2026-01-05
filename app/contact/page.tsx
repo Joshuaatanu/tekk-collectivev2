@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import UnicornBackground from "@/components/UnicornBackground";
 import React, { useState } from "react";
 
 function printFormattedDate(date: Date): string {
@@ -58,7 +59,7 @@ export default function Contact() {
       ...prev,
       [name]: value
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => {
@@ -71,41 +72,41 @@ export default function Contact() {
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
-    
+
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     }
-    
+
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
-    
+
     if (!formData.subject.trim()) {
       newErrors.subject = 'Subject is required';
     }
-    
+
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
     } else if (formData.message.trim().length < 10) {
       newErrors.message = 'Message must be at least 10 characters long';
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
-    
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -117,7 +118,7 @@ export default function Contact() {
           ...formData
         })
       });
-      
+
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ email: '', name: '', subject: '', message: '' });
@@ -141,6 +142,7 @@ export default function Contact() {
 
   return (
     <div className="bg-black min-h-screen overflow-hidden">
+      <UnicornBackground />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         {/* Dynamic Background Grid */}
@@ -160,7 +162,7 @@ export default function Contact() {
 
 
         <Navbar />
-        
+
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
@@ -177,7 +179,7 @@ export default function Contact() {
               Let's discuss how we can transform your business through technology
             </p>
           </div>
-          
+
           <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 text-white/50 font-light text-sm tracking-wider animate-slide-up" style={{ animationDelay: '1s' }}>
             <span className="animate-text-shimmer bg-gradient-to-r from-white/50 to-white/70 bg-clip-text text-transparent bg-[length:200%_100%]">
               {formattedDate}
@@ -207,7 +209,7 @@ export default function Contact() {
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/10 rounded-full animate-gentle-float"></div>
         </div>
-        
+
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Enhanced Contact Form */}
@@ -218,7 +220,7 @@ export default function Contact() {
                 </h2>
                 <div className="w-16 h-px bg-white/30 animate-line-expand"></div>
               </div>
-              
+
               <form
                 onSubmit={handleSubmit}
                 className="space-y-8"
@@ -229,13 +231,13 @@ export default function Contact() {
                     <p className="font-light">Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</p>
                   </div>
                 )}
-                
+
                 {submitStatus === 'error' && (
                   <div className="p-4 border border-red-500/30 bg-red-500/10 text-red-400 rounded" role="alert">
                     <p className="font-light">Sorry, there was an error sending your message. Please try again or contact us directly.</p>
                   </div>
                 )}
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="group relative">
                     <label htmlFor="name" className="sr-only">Full Name</label>
@@ -251,22 +253,20 @@ export default function Contact() {
                       required
                       aria-invalid={errors.name ? 'true' : 'false'}
                       aria-describedby={errors.name ? 'name-error' : undefined}
-                      className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light hover:border-white/30 focus-ring ${
-                        errors.name ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
-                      }`}
+                      className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light hover:border-white/30 focus-ring ${errors.name ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
+                        }`}
                     />
-                    <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${
-                      focusedField === 'name' 
-                        ? `w-full ${errors.name ? 'bg-red-500' : 'bg-brand-primary'}` 
+                    <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${focusedField === 'name'
+                        ? `w-full ${errors.name ? 'bg-red-500' : 'bg-brand-primary'}`
                         : 'w-0'
-                    }`}></div>
+                      }`}></div>
                     {errors.name && (
                       <p id="name-error" className="text-red-400 text-sm mt-2 font-light" role="alert">
                         {errors.name}
                       </p>
                     )}
                   </div>
-                  
+
                   <div className="group relative">
                     <label htmlFor="email" className="sr-only">Email Address</label>
                     <input
@@ -281,15 +281,13 @@ export default function Contact() {
                       required
                       aria-invalid={errors.email ? 'true' : 'false'}
                       aria-describedby={errors.email ? 'email-error' : undefined}
-                      className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light hover:border-white/30 focus-ring ${
-                        errors.email ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
-                      }`}
+                      className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light hover:border-white/30 focus-ring ${errors.email ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
+                        }`}
                     />
-                    <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${
-                      focusedField === 'email' 
-                        ? `w-full ${errors.email ? 'bg-red-500' : 'bg-brand-primary'}` 
+                    <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${focusedField === 'email'
+                        ? `w-full ${errors.email ? 'bg-red-500' : 'bg-brand-primary'}`
                         : 'w-0'
-                    }`}></div>
+                      }`}></div>
                     {errors.email && (
                       <p id="email-error" className="text-red-400 text-sm mt-2 font-light" role="alert">
                         {errors.email}
@@ -297,7 +295,7 @@ export default function Contact() {
                     )}
                   </div>
                 </div>
-                
+
                 <div className="group relative">
                   <label htmlFor="subject" className="sr-only">Subject</label>
                   <input
@@ -312,22 +310,20 @@ export default function Contact() {
                     required
                     aria-invalid={errors.subject ? 'true' : 'false'}
                     aria-describedby={errors.subject ? 'subject-error' : undefined}
-                    className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light hover:border-white/30 focus-ring ${
-                      errors.subject ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
-                    }`}
+                    className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light hover:border-white/30 focus-ring ${errors.subject ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
+                      }`}
                   />
-                  <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${
-                    focusedField === 'subject' 
-                      ? `w-full ${errors.subject ? 'bg-red-500' : 'bg-brand-primary'}` 
+                  <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${focusedField === 'subject'
+                      ? `w-full ${errors.subject ? 'bg-red-500' : 'bg-brand-primary'}`
                       : 'w-0'
-                  }`}></div>
+                    }`}></div>
                   {errors.subject && (
                     <p id="subject-error" className="text-red-400 text-sm mt-2 font-light" role="alert">
                       {errors.subject}
                     </p>
                   )}
                 </div>
-                
+
                 <div className="group relative">
                   <label htmlFor="message" className="sr-only">Tell us about your project</label>
                   <textarea
@@ -342,30 +338,27 @@ export default function Contact() {
                     rows={6}
                     aria-invalid={errors.message ? 'true' : 'false'}
                     aria-describedby={errors.message ? 'message-error' : undefined}
-                    className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light resize-none hover:border-white/30 focus-ring ${
-                      errors.message ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
-                    }`}
+                    className={`w-full bg-transparent border-b text-white placeholder-white/40 py-4 focus:outline-none transition-all duration-500 font-light resize-none hover:border-white/30 focus-ring ${errors.message ? 'border-red-500/50 focus:border-red-500' : 'border-white/20 focus:border-brand-primary'
+                      }`}
                   ></textarea>
-                  <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${
-                    focusedField === 'message' 
-                      ? `w-full ${errors.message ? 'bg-red-500' : 'bg-brand-primary'}` 
+                  <div className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${focusedField === 'message'
+                      ? `w-full ${errors.message ? 'bg-red-500' : 'bg-brand-primary'}`
                       : 'w-0'
-                  }`}></div>
+                    }`}></div>
                   {errors.message && (
                     <p id="message-error" className="text-red-400 text-sm mt-2 font-light" role="alert">
                       {errors.message}
                     </p>
                   )}
                 </div>
-                
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`group px-12 py-4 border font-light tracking-wide relative overflow-hidden focus-ring transition-all duration-700 ${
-                    isSubmitting 
-                      ? 'border-white/20 text-white/50 cursor-not-allowed' 
+                  className={`group px-12 py-4 border font-light tracking-wide relative overflow-hidden focus-ring transition-all duration-700 ${isSubmitting
+                      ? 'border-white/20 text-white/50 cursor-not-allowed'
                       : 'border-brand-primary/50 bg-brand-gradient text-white hover:bg-brand-secondary hover:border-brand-secondary shadow-brand-glow hover:shadow-lg'
-                  }`}
+                    }`}
                   aria-describedby="submit-status"
                 >
                   <span className="relative z-10 flex items-center justify-center">
@@ -399,7 +392,7 @@ export default function Contact() {
                 </h2>
                 <div className="w-16 h-px bg-white/30 animate-line-expand"></div>
               </div>
-              
+
               <div className="space-y-12">
                 <div className="group relative p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/2">
                   <h3 className="text-white/50 font-light text-sm tracking-wider uppercase mb-4 group-hover:text-white/70 transition-colors duration-300">
@@ -409,11 +402,11 @@ export default function Contact() {
                     atanu@tekkcollective.com
                   </p>
                   <div className="w-8 h-px bg-white/20 mt-4 group-hover:w-20 transition-all duration-700"></div>
-                  
+
                   {/* Corner accent */}
                   <div className="absolute top-2 right-2 w-4 h-4 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-300"></div>
                 </div>
-                
+
                 <div className="group relative p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/2">
                   <h3 className="text-white/50 font-light text-sm tracking-wider uppercase mb-4 group-hover:text-white/70 transition-colors duration-300">
                     Phone
@@ -422,11 +415,11 @@ export default function Contact() {
                     +447375433203
                   </p>
                   <div className="w-8 h-px bg-white/20 mt-4 group-hover:w-20 transition-all duration-700"></div>
-                  
+
                   {/* Corner accent */}
                   <div className="absolute top-2 right-2 w-4 h-4 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-300"></div>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -438,11 +431,11 @@ export default function Contact() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent animate-line-expand"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent animate-line-expand" style={{ animationDelay: '1s' }}></div>
-          
+
           {/* Floating response indicators */}
           <div className="absolute bottom-1/4 right-1/4 w-16 h-16 bg-white/5 rounded-full animate-glow-pulse"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-8 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -451,7 +444,7 @@ export default function Contact() {
             <p className="text-white/60 text-xl font-light mb-12 max-w-2xl mx-auto">
               We typically respond to all inquiries within 24 hours. For urgent matters, please call us directly.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
                 { time: "< 1 Hour", label: "Emergency Support", delay: "0s" },
@@ -466,7 +459,7 @@ export default function Contact() {
                     {response.label}
                   </div>
                   <div className="w-8 h-px bg-white/20 mx-auto mt-4 group-hover:w-20 transition-all duration-700"></div>
-                  
+
                   {/* Floating indicator */}
                   <div className="absolute -top-2 -right-2 w-2 h-2 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-minimal-pulse"></div>
                 </div>
@@ -483,7 +476,7 @@ export default function Contact() {
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           <div className="absolute top-1/3 left-1/4 w-20 h-20 border border-white/5 rounded-full animate-gentle-float"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -498,7 +491,7 @@ export default function Contact() {
               Common questions about our services, process, and how we can help your business
             </p>
           </div>
-          
+
           <div className="space-y-6">
             {[
               {
@@ -549,18 +542,18 @@ export default function Contact() {
                 <p className="text-white/60 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-300">
                   {faq.answer}
                 </p>
-                
+
                 {/* Corner accent */}
                 <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
               </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-16 animate-slide-up" style={{ animationDelay: '0.5s' }}>
             <p className="text-white/60 font-light mb-6">
               Still have questions? We're here to help.
             </p>
-            <a 
+            <a
               href="mailto:atanu@tekkcollective.com"
               className="inline-flex items-center px-8 py-3 border border-white/30 text-white font-light hover:bg-white hover:text-black transition-all duration-500 group"
             >

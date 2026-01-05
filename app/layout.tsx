@@ -1,9 +1,9 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import StarryBackground from '@/components/StarryBackground'
+import UnicornBackground from '@/components/UnicornBackground'
 import PageTransition from '@/components/PageTransition'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   preload: true
@@ -68,13 +68,13 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        <StarryBackground />
+        <UnicornBackground />
         <PageTransition>
           <main id="main-content">
             {children}
           </main>
         </PageTransition>
-        
+
         {/* Performance monitoring script placeholder */}
         <script
           dangerouslySetInnerHTML={{

@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import UnicornBackground from "@/components/UnicornBackground";
 import { useState, useEffect } from "react";
 
 const projects = [
@@ -147,14 +148,15 @@ export default function Work() {
     };
   }, [selectedProject]);
 
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
+  const filteredProjects = selectedCategory === "All"
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   const featuredProjects = projects.filter(project => project.featured);
 
   return (
     <div className="bg-black min-h-screen overflow-hidden">
+      <UnicornBackground />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         {/* Subtle Background Grid */}
@@ -176,7 +178,7 @@ export default function Work() {
         </div>
 
         <Navbar />
-        
+
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
@@ -211,7 +213,7 @@ export default function Work() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -226,11 +228,11 @@ export default function Work() {
               Our most impactful and innovative solutions
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5">
             {featuredProjects.map((project, index) => (
-              <div 
-                key={project.id} 
+              <div
+                key={project.id}
                 className="bg-black p-16 hover:bg-white/2 transition-all duration-700 group border-r border-b border-white/5 hover:border-white/20 animate-scale-in cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => setSelectedProject(project.id)}
@@ -247,14 +249,14 @@ export default function Work() {
                   </div>
                   <div className="w-8 h-px bg-white/20 group-hover:w-16 transition-all duration-700"></div>
                 </div>
-                
+
                 <p className="text-white/60 font-light leading-relaxed mb-8 text-lg group-hover:text-white/70 transition-colors duration-500">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.technologies.slice(0, 4).map((tech, techIndex) => (
-                    <span 
+                    <span
                       key={techIndex}
                       className="px-3 py-1 border border-white/20 text-white/50 text-xs font-light group-hover:border-white/30 group-hover:text-white/60 transition-all duration-300"
                     >
@@ -262,7 +264,7 @@ export default function Work() {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="space-y-3">
                   {project.results.slice(0, 2).map((result, resultIndex) => (
                     <div key={resultIndex} className="flex items-center group-hover:translate-x-2 transition-transform duration-500">
@@ -273,11 +275,11 @@ export default function Work() {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="absolute bottom-6 right-6 text-white/30 group-hover:text-white/50 transition-colors duration-500">
                   <span className="text-xs font-light tracking-wider">VIEW CASE STUDY →</span>
                 </div>
-                
+
                 {/* Subtle corner element */}
                 <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
               </div>
@@ -293,34 +295,33 @@ export default function Work() {
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           <div className="absolute top-1/4 right-1/5 w-20 h-20 bg-white/3 rounded-full animate-subtle-glow"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-8 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
               All Projects
             </h2>
-            
+
             {/* Category Filter */}
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-2 border font-light text-sm tracking-wider transition-all duration-300 ${
-                    selectedCategory === category
+                  className={`px-6 py-2 border font-light text-sm tracking-wider transition-all duration-300 ${selectedCategory === category
                       ? 'border-white/50 text-white bg-white/10'
                       : 'border-white/20 text-white/60 hover:border-white/40 hover:text-white/80'
-                  }`}
+                    }`}
                 >
                   {category}
                 </button>
               ))}
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
-              <div 
+              <div
                 key={project.id}
                 className="bg-black/50 border border-white/10 p-8 hover:border-white/30 transition-all duration-700 group cursor-pointer animate-scale-in"
                 style={{ animationDelay: `${index * 0.05}s` }}
@@ -333,21 +334,21 @@ export default function Work() {
                     </span>
                     <span className={`w-3 h-3 rounded-full ${project.featured ? 'bg-white/50' : 'bg-white/20'}`}></span>
                   </div>
-                  
+
                   <h3 className="text-xl font-thin text-white mb-2 group-hover:text-white/90 transition-colors duration-500">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-white/50 font-light text-sm mb-4">{project.client}</p>
-                  
+
                   <p className="text-white/60 font-light leading-relaxed text-sm group-hover:text-white/70 transition-colors duration-500">
                     {project.description}
                   </p>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-1 mb-6">
                   {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                    <span 
+                    <span
                       key={techIndex}
                       className="px-2 py-1 border border-white/15 text-white/40 text-xs font-light group-hover:border-white/25 group-hover:text-white/50 transition-all duration-300"
                     >
@@ -355,13 +356,13 @@ export default function Work() {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="text-right">
                   <span className="text-white/30 group-hover:text-white/50 transition-colors duration-500 text-xs font-light tracking-wider">
                     VIEW PROJECT →
                   </span>
                 </div>
-                
+
                 <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
               </div>
             ))}
@@ -371,7 +372,7 @@ export default function Work() {
 
       {/* Project Modal */}
       {selectedProject && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-6 overflow-y-auto"
           role="dialog"
           aria-modal="true"
@@ -385,11 +386,11 @@ export default function Work() {
             >
               ×
             </button>
-            
+
             {(() => {
               const project = projects.find(p => p.id === selectedProject);
               if (!project) return null;
-              
+
               return (
                 <div>
                   <div className="mb-8">
@@ -399,23 +400,23 @@ export default function Work() {
                     <h2 id="project-modal-title" className="text-4xl font-thin text-white mt-2 mb-4">{project.title}</h2>
                     <p className="text-white/60 font-light">{project.client}</p>
                   </div>
-                  
+
                   <div className="space-y-8">
                     <div>
                       <h3 className="text-xl font-thin text-white mb-4">Overview</h3>
                       <p className="text-white/70 font-light leading-relaxed">{project.description}</p>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-thin text-white mb-4">Challenge</h3>
                       <p className="text-white/70 font-light leading-relaxed">{project.challenge}</p>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-thin text-white mb-4">Solution</h3>
                       <p className="text-white/70 font-light leading-relaxed">{project.solution}</p>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-thin text-white mb-4">Results</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -427,12 +428,12 @@ export default function Work() {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-thin text-white mb-4">Technologies</h3>
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech, index) => (
-                          <span 
+                          <span
                             key={index}
                             className="px-4 py-2 border border-white/20 text-white/60 text-sm font-light"
                           >
@@ -454,27 +455,27 @@ export default function Work() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <div className="animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-8 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
               Ready for Your Project?
             </h2>
-            
+
             <p className="text-xl text-white/70 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
               Let's create something extraordinary together. Every great project starts with a conversation.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <a 
+              <a
                 href="/contact"
                 className="group px-12 py-4 border border-white/30 text-white font-light hover:bg-white hover:text-black transition-all duration-500"
               >
                 <span>Start Your Project</span>
                 <div className="w-0 group-hover:w-full h-px bg-white transition-all duration-500 mt-2"></div>
               </a>
-              
-              <a 
+
+              <a
                 href="/services"
                 className="group px-12 py-4 text-white/70 font-light hover:text-white transition-colors duration-500"
               >

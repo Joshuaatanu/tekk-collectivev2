@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import UnicornBackground from "@/components/UnicornBackground";
 
 const services = [
   {
@@ -80,6 +81,7 @@ const services = [
 export default function Services() {
   return (
     <div className="bg-black min-h-screen overflow-hidden">
+      <UnicornBackground />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         {/* Dynamic Background Grid */}
@@ -98,7 +100,7 @@ export default function Services() {
 
 
         <Navbar />
-        
+
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
@@ -136,7 +138,7 @@ export default function Services() {
         </div>
         {/* Background Blur Layer */}
         <div className="absolute inset-0 backdrop-blur-[1px] bg-black/8"></div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5">
             {services.map((service, index) => (
@@ -147,21 +149,21 @@ export default function Services() {
                   </span>
                   <div className="w-8 h-px bg-white/20 group-hover:w-20 transition-all duration-700 animate-line-expand"></div>
                 </div>
-                
+
                 <h3 className="text-3xl md:text-4xl text-white font-thin mb-4 group-hover:text-white/90 transition-colors duration-500">
                   {service.title}
                 </h3>
-                
+
                 <p className="text-white/60 font-light leading-relaxed mb-8 text-lg group-hover:text-white/70 transition-colors duration-500">
                   {service.description}
                 </p>
-                
+
                 <div className="mb-8">
                   <h4 className="text-white/80 font-light text-sm tracking-wider uppercase mb-4 group-hover:text-white/90 transition-colors duration-500">
                     Key Services
                   </h4>
                 </div>
-                
+
                 <div className="space-y-4">
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center group-hover:translate-x-2 transition-transform duration-500 animate-slide-left" style={{ transitionDelay: `${featureIndex * 50}ms`, animationDelay: `${(index * 0.1) + (featureIndex * 0.05)}s` }}>
@@ -170,10 +172,10 @@ export default function Services() {
                     </div>
                   ))}
                 </div>
-                
+
                 {/* Hover overlay effect */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
-                
+
                 {/* Interactive corner element */}
                 <div className="absolute bottom-4 right-4 w-8 h-8 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500 group-hover:scale-110 transform transition-transform duration-300"></div>
               </div>
@@ -187,11 +189,11 @@ export default function Services() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
-          
+
           {/* Floating process indicators */}
           <div className="absolute bottom-1/4 right-1/4 w-12 h-12 bg-white/5 rounded-full"></div>
         </div>
-        
+
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-20 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -199,7 +201,7 @@ export default function Services() {
             </h2>
             <div className="w-16 h-px bg-white/30 mx-auto animate-line-expand"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
             {[
               { step: "01", title: "Discovery", desc: "Understanding your business needs and challenges", delay: "0s" },
@@ -220,7 +222,7 @@ export default function Services() {
                 <h3 className="text-xl text-white font-light mb-4 group-hover:text-white/90 transition-colors duration-300">{process.title}</h3>
                 <p className="text-white/50 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-300">{process.desc}</p>
                 <div className="w-8 h-px bg-white/20 mx-auto mt-6 group-hover:w-16 transition-all duration-700"></div>
-                
+
                 {/* Floating indicator */}
                 <div className="absolute -top-4 -right-4 w-3 h-3 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-minimal-pulse"></div>
               </div>
@@ -235,7 +237,7 @@ export default function Services() {
           <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-1/4 left-1/4 w-16 h-16 border border-white/15 rounded-full"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="animate-scale-in">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-8 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -244,16 +246,16 @@ export default function Services() {
             <p className="text-white/60 text-xl font-light mb-12 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.3s' }}>
               Ready to transform your business with cutting-edge technology solutions?
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-              <a 
+              <a
                 href="/contact"
                 className="group px-12 py-4 border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-700 font-light tracking-wide relative overflow-hidden inline-block"
               >
                 <span className="relative z-10">Schedule Consultation</span>
                 <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
               </a>
-              <a 
+              <a
                 href="/documents/service-guide.html"
                 target="_blank"
                 rel="noopener noreferrer"

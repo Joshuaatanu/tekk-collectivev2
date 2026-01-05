@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import UnicornBackground from "@/components/UnicornBackground";
 
 const projects = [
   {
@@ -48,6 +49,7 @@ const projects = [
 export default function Projects() {
   return (
     <div className="bg-black min-h-screen overflow-hidden">
+      <UnicornBackground />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         {/* Dynamic Background Grid */}
@@ -69,7 +71,7 @@ export default function Projects() {
           <div className="absolute bottom-40 left-1/4 w-12 h-12 border-2 border-white/15 animate-particle-float"></div>
           <div className="absolute top-1/3 right-1/4 w-28 h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-line-expand" style={{ animationDelay: '1s' }}></div>
           <div className="absolute bottom-24 right-32 w-16 h-16 border border-white/10 rounded-full animate-glow-pulse"></div>
-          
+
           {/* Additional dynamic elements */}
           <div className="absolute top-1/2 left-1/6 w-6 h-6 bg-white/15 rounded-full animate-particle-float" style={{ animationDelay: '2s' }}></div>
           <div className="absolute bottom-1/3 right-1/3 w-24 h-24 border border-white/5 animate-geometric-rotate"></div>
@@ -77,7 +79,7 @@ export default function Projects() {
         </div>
 
         <Navbar />
-        
+
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
@@ -115,7 +117,7 @@ export default function Projects() {
           <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-white/5 rotate-45 animate-geometric-rotate"></div>
           <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/10 rounded-full animate-border-dance"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5">
             {projects.map((project, index) => (
@@ -128,7 +130,7 @@ export default function Projects() {
                     0{index + 1}
                   </span>
                 </div>
-                
+
                 <div className="mb-8">
                   <h3 className="text-3xl md:text-4xl text-white font-thin mb-4 group-hover:text-white/90 transition-colors duration-500">
                     {project.title}
@@ -140,13 +142,13 @@ export default function Projects() {
                     {project.description}
                   </p>
                 </div>
-                
+
                 {/* Impact metric */}
                 <div className="mb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-slide-up">
                   <div className="text-2xl font-thin text-white/80 mb-2">{project.impact}</div>
                   <div className="w-12 h-px bg-white/30"></div>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-3 mb-8">
                   {project.technologies.map((tech, techIndex) => (
                     <span key={techIndex} className="px-3 py-1 border border-white/20 text-white/50 text-sm font-light hover:border-white/40 hover:text-white/70 transition-all duration-300 animate-slide-left" style={{ animationDelay: `${(index * 0.15) + (techIndex * 0.05)}s` }}>
@@ -154,7 +156,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex items-center justify-between">
                   <button className="text-white/70 hover:text-white transition-colors duration-500 underline underline-offset-4 font-light group/btn">
                     <span>View Case Study</span>
@@ -162,10 +164,10 @@ export default function Projects() {
                   </button>
                   <div className="w-8 h-px bg-white/20 group-hover:w-20 transition-all duration-700 animate-line-expand"></div>
                 </div>
-                
+
                 {/* Hover overlay effect */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
-                
+
                 {/* Interactive corner element */}
                 <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-500 group-hover:scale-110 transform transition-transform duration-300"></div>
               </div>
@@ -179,12 +181,12 @@ export default function Projects() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent animate-line-expand"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent animate-line-expand" style={{ animationDelay: '1s' }}></div>
-          
+
           {/* Floating capability indicators */}
           <div className="absolute top-1/4 left-1/4 w-20 h-20 border border-white/5 animate-float"></div>
           <div className="absolute bottom-1/4 right-1/4 w-16 h-16 bg-white/5 rounded-full animate-glow-pulse"></div>
         </div>
-        
+
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-20 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -192,7 +194,7 @@ export default function Projects() {
             </h2>
             <div className="w-16 h-px bg-white/30 mx-auto animate-line-expand"></div>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-16">
             {[
               { metric: "150+", label: "Projects Delivered", delay: "0s" },
@@ -208,7 +210,7 @@ export default function Projects() {
                   {stat.label}
                 </div>
                 <div className="w-8 h-px bg-white/20 mx-auto mt-4 group-hover:w-20 transition-all duration-700"></div>
-                
+
                 {/* Floating indicator */}
                 <div className="absolute -top-2 -right-2 w-2 h-2 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-minimal-pulse"></div>
               </div>
@@ -224,7 +226,7 @@ export default function Projects() {
           <div className="absolute top-1/4 right-1/4 w-24 h-24 border border-white/5 animate-morph"></div>
           <div className="absolute bottom-1/4 left-1/4 w-16 h-16 border border-white/10 rounded-full animate-glow-pulse"></div>
         </div>
-        
+
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-20 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -232,7 +234,7 @@ export default function Projects() {
             </h2>
             <div className="w-16 h-px bg-white/30 mx-auto animate-line-expand"></div>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {[
               "React", "Node.js", "Python", "AWS", "Kubernetes", "TensorFlow",
@@ -242,10 +244,10 @@ export default function Projects() {
                 <div className="text-white/60 font-light group-hover:text-white/80 transition-colors duration-500 relative z-10">
                   {tech}
                 </div>
-                
+
                 {/* Hover effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
+
                 {/* Corner accent */}
                 <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-300"></div>
               </div>
@@ -261,7 +263,7 @@ export default function Projects() {
           <div className="absolute top-1/4 right-1/4 w-20 h-20 border border-white/10 animate-particle-float"></div>
           <div className="absolute bottom-1/4 left-1/4 w-16 h-16 border border-white/15 rounded-full animate-glow-pulse"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="animate-scale-in">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-8 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -270,16 +272,16 @@ export default function Projects() {
             <p className="text-white/60 text-xl font-light mb-12 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.3s' }}>
               Ready to bring your vision to life with innovative technology solutions?
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-              <a 
+              <a
                 href="/contact"
                 className="group px-12 py-4 border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-700 font-light tracking-wide relative overflow-hidden inline-block"
               >
                 <span className="relative z-10">Discuss Your Project</span>
                 <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
               </a>
-              <a 
+              <a
                 href="/work"
                 className="text-white/70 hover:text-white transition-colors duration-500 underline underline-offset-4 font-light group inline-block"
               >

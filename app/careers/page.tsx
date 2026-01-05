@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import UnicornBackground from "@/components/UnicornBackground";
 
 const volunteerRoles = [
   {
@@ -125,6 +126,7 @@ const benefits = [
 export default function Careers() {
   return (
     <div className="bg-black min-h-screen overflow-hidden">
+      <UnicornBackground />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         {/* Dynamic Background Grid */}
@@ -143,14 +145,14 @@ export default function Careers() {
           <div className="absolute top-20 right-32 w-1 h-32 bg-gradient-to-b from-white/20 to-transparent animate-line-expand"></div>
           <div className="absolute bottom-32 left-1/4 w-24 h-24 border border-white/10 rounded-full animate-glow-pulse"></div>
           <div className="absolute top-1/2 right-20 w-32 h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-line-expand" style={{ animationDelay: '1s' }}></div>
-          
+
           {/* Additional floating elements */}
           <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-white/10 rounded-full animate-particle-float"></div>
           <div className="absolute bottom-1/4 right-1/3 w-16 h-16 border border-white/5 rounded-full animate-subtle-glow"></div>
         </div>
 
         <Navbar />
-        
+
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
@@ -185,25 +187,25 @@ export default function Careers() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl font-thin text-white mb-12 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent animate-slide-up">
             Why Volunteer With Us?
           </h2>
-          
+
           <div className="space-y-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <p className="text-xl text-white/70 font-light leading-relaxed">
-              At Tekk Collective, we believe in nurturing the next generation of tech professionals. Our volunteer program 
-              offers you the opportunity to work on real client projects, gain valuable experience, and make a meaningful 
+              At Tekk Collective, we believe in nurturing the next generation of tech professionals. Our volunteer program
+              offers you the opportunity to work on real client projects, gain valuable experience, and make a meaningful
               impact while building your career.
             </p>
-            
+
             <p className="text-xl text-white/70 font-light leading-relaxed">
-              Whether you're a student looking to gain practical experience, a career changer wanting to build a portfolio, 
-              or a professional seeking to give back to the community, our volunteer opportunities provide the perfect 
+              Whether you're a student looking to gain practical experience, a career changer wanting to build a portfolio,
+              or a professional seeking to give back to the community, our volunteer opportunities provide the perfect
               platform to grow your skills and network.
             </p>
-            
+
             <div className="flex items-center justify-center mt-12">
               <div className="w-16 h-px bg-white/30"></div>
               <div className="mx-6 w-2 h-2 bg-white/40 rounded-full"></div>
@@ -220,7 +222,7 @@ export default function Careers() {
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           <div className="absolute top-1/3 right-1/4 w-18 h-18 bg-white/3 rounded-full animate-subtle-glow"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -232,7 +234,7 @@ export default function Careers() {
               <div className="w-16 h-px bg-white/30"></div>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-black/50 border border-white/10 p-8 hover:border-white/30 transition-all duration-700 group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -247,7 +249,7 @@ export default function Careers() {
                     {benefit.description}
                   </p>
                 </div>
-                
+
                 <div className="absolute bottom-4 right-4 w-4 h-4 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
               </div>
             ))}
@@ -262,7 +264,7 @@ export default function Careers() {
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-1/4 left-1/4 w-24 h-24 border border-white/10 rounded-full animate-gentle-float"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -277,7 +279,7 @@ export default function Careers() {
               Choose from various roles that match your skills and interests
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {volunteerRoles.map((role, index) => (
               <div key={index} className="bg-black/30 border border-white/10 p-8 hover:border-white/20 transition-all duration-700 group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -289,15 +291,15 @@ export default function Careers() {
                     {role.type}
                   </span>
                 </div>
-                
+
                 <h3 className="text-2xl text-white font-thin mb-3 group-hover:text-white/90 transition-colors duration-500">
                   {role.title}
                 </h3>
-                
+
                 <p className="text-white/60 font-light leading-relaxed mb-6 group-hover:text-white/70 transition-colors duration-500">
                   {role.description}
                 </p>
-                
+
                 <div className="mb-6">
                   <h4 className="text-white/80 font-light text-sm tracking-wider uppercase mb-3 group-hover:text-white/90 transition-colors duration-500">
                     Skills Needed
@@ -311,7 +313,7 @@ export default function Careers() {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   <div>
                     <h5 className="text-white/70 font-light text-xs tracking-wider uppercase mb-2">Time Commitment</h5>
@@ -322,7 +324,7 @@ export default function Careers() {
                     <p className="text-white/60 font-light text-sm leading-relaxed">{role.impact}</p>
                   </div>
                 </div>
-                
+
                 {/* Interactive corner element */}
                 <div className="absolute bottom-4 right-4 w-8 h-8 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500 group-hover:scale-110 transform transition-transform duration-300"></div>
               </div>
@@ -337,7 +339,7 @@ export default function Careers() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </div>
-        
+
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-20 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -345,7 +347,7 @@ export default function Careers() {
             </h2>
             <div className="w-16 h-px bg-white/30 mx-auto animate-line-expand"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {[
               { step: "01", title: "Submit Application", desc: "Fill out our volunteer application form with your background and interests", delay: "0s" },
@@ -377,7 +379,7 @@ export default function Careers() {
           <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-1/4 left-1/4 w-16 h-16 border border-white/15 rounded-full animate-glow-pulse"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="animate-scale-in">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-8 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -386,16 +388,16 @@ export default function Careers() {
             <p className="text-white/60 text-xl font-light mb-12 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.3s' }}>
               Join our community of passionate volunteers and start building your future in tech today.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-              <a 
+              <a
                 href="/contact"
                 className="group px-12 py-4 border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-700 font-light tracking-wide relative overflow-hidden inline-block"
               >
                 <span className="relative z-10">Apply Now</span>
                 <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
               </a>
-              <a 
+              <a
                 href="/about"
                 className="text-white/70 hover:text-white transition-colors duration-500 underline underline-offset-4 font-light group inline-block"
               >

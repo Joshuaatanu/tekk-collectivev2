@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import UnicornBackground from "@/components/UnicornBackground";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
@@ -262,7 +263,7 @@ The trends of 2024 represent a maturation of the UX field—moving beyond surfac
 const categories = [
   "All",
   "AI & Machine Learning",
-  "Cloud Computing", 
+  "Cloud Computing",
   "Design & UX",
   "Case Studies",
   "Security",
@@ -273,8 +274,8 @@ export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPost, setSelectedPost] = useState<number | null>(null);
 
-  const filteredPosts = selectedCategory === "All" 
-    ? blogPosts 
+  const filteredPosts = selectedCategory === "All"
+    ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
 
   const featuredPosts = blogPosts.filter(post => post.featured);
@@ -282,6 +283,7 @@ export default function Blog() {
 
   return (
     <div className="bg-black min-h-screen overflow-hidden">
+      <UnicornBackground />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         {/* Subtle Background Grid */}
@@ -304,7 +306,7 @@ export default function Blog() {
         </div>
 
         <Navbar />
-        
+
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
@@ -339,7 +341,7 @@ export default function Blog() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -354,11 +356,11 @@ export default function Blog() {
               Deep dives into the technologies and strategies shaping the future
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5">
             {featuredPosts.map((post, index) => (
-              <div 
-                key={post.id} 
+              <div
+                key={post.id}
                 className="bg-black p-16 hover:bg-white/2 transition-all duration-700 group border-r border-b border-white/5 hover:border-white/20 animate-scale-in cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => setSelectedPost(post.id)}
@@ -369,15 +371,15 @@ export default function Blog() {
                   </span>
                   <div className="w-8 h-px bg-white/20 group-hover:w-16 transition-all duration-700"></div>
                 </div>
-                
+
                 <h3 className="text-2xl md:text-3xl text-white font-thin mb-4 group-hover:text-white/90 transition-colors duration-500 leading-tight">
                   {post.title}
                 </h3>
-                
+
                 <p className="text-white/60 font-light leading-relaxed mb-8 text-lg group-hover:text-white/70 transition-colors duration-500">
                   {post.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center">
                     <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white/60 font-light mr-3">
@@ -390,10 +392,10 @@ export default function Blog() {
                   </div>
                   <span className="text-white/40 text-sm font-light">{post.readTime}</span>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {post.tags.slice(0, 3).map((tag, tagIndex) => (
-                    <span 
+                    <span
                       key={tagIndex}
                       className="px-3 py-1 border border-white/20 text-white/50 text-xs font-light group-hover:border-white/30 group-hover:text-white/60 transition-all duration-300"
                     >
@@ -401,11 +403,11 @@ export default function Blog() {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="absolute bottom-6 right-6 text-white/30 group-hover:text-white/50 transition-colors duration-500">
                   <span className="text-xs font-light tracking-wider">READ MORE →</span>
                 </div>
-                
+
                 {/* Subtle corner element */}
                 <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
               </div>
@@ -421,34 +423,33 @@ export default function Blog() {
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           <div className="absolute top-1/4 left-1/5 w-20 h-20 bg-white/3 rounded-full animate-subtle-glow"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-8 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
               Latest Insights
             </h2>
-            
+
             {/* Category Filter */}
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-2 border font-light text-sm tracking-wider transition-all duration-300 ${
-                    selectedCategory === category
+                  className={`px-6 py-2 border font-light text-sm tracking-wider transition-all duration-300 ${selectedCategory === category
                       ? 'border-white/50 text-white bg-white/10'
                       : 'border-white/20 text-white/60 hover:border-white/40 hover:text-white/80'
-                  }`}
+                    }`}
                 >
                   {category}
                 </button>
               ))}
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post, index) => (
-              <div 
+              <div
                 key={post.id}
                 className="bg-black/50 border border-white/10 p-8 hover:border-white/30 transition-all duration-700 group cursor-pointer animate-scale-in"
                 style={{ animationDelay: `${index * 0.05}s` }}
@@ -461,20 +462,20 @@ export default function Blog() {
                     </span>
                     <span className={`w-3 h-3 rounded-full ${post.featured ? 'bg-white/50' : 'bg-white/20'}`}></span>
                   </div>
-                  
+
                   <h3 className="text-xl font-thin text-white mb-3 group-hover:text-white/90 transition-colors duration-500 leading-tight">
                     {post.title}
                   </h3>
-                  
+
                   <p className="text-white/60 font-light leading-relaxed text-sm group-hover:text-white/70 transition-colors duration-500 mb-4">
                     {post.excerpt}
                   </p>
-                  
+
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-white/40 text-xs font-light">{post.category}</span>
                     <span className="text-white/40 text-xs font-light">{post.readTime}</span>
                   </div>
-                  
+
                   <div className="flex items-center mb-4">
                     <div className="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center text-white/60 font-light mr-2 text-xs">
                       {post.author.split(' ').map(n => n[0]).join('')}
@@ -482,13 +483,13 @@ export default function Blog() {
                     <span className="text-white/50 text-xs font-light">{post.author}</span>
                   </div>
                 </div>
-                
+
                 <div className="text-right">
                   <span className="text-white/30 group-hover:text-white/50 transition-colors duration-500 text-xs font-light tracking-wider">
                     READ ARTICLE →
                   </span>
                 </div>
-                
+
                 <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
               </div>
             ))}
@@ -506,11 +507,11 @@ export default function Blog() {
             >
               ×
             </button>
-            
+
             {(() => {
               const post = blogPosts.find(p => p.id === selectedPost);
               if (!post) return null;
-              
+
               return (
                 <article>
                   <header className="mb-8">
@@ -518,7 +519,7 @@ export default function Blog() {
                       {post.publishDate} • {post.category}
                     </span>
                     <h1 className="text-4xl font-thin text-white mt-2 mb-4 leading-tight">{post.title}</h1>
-                    
+
                     <div className="flex items-center justify-between mb-6">
                       <div className="flex items-center">
                         <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white/60 font-light mr-4">
@@ -531,10 +532,10 @@ export default function Blog() {
                       </div>
                       <span className="text-white/40 text-sm font-light">{post.readTime}</span>
                     </div>
-                    
+
                     <div className="flex flex-wrap gap-2 mb-8">
                       {post.tags.map((tag, index) => (
-                        <span 
+                        <span
                           key={index}
                           className="px-3 py-1 border border-white/20 text-white/50 text-sm font-light"
                         >
@@ -543,7 +544,7 @@ export default function Blog() {
                       ))}
                     </div>
                   </header>
-                  
+
                   <div className="prose prose-invert max-w-none">
                     <p className="text-white/70 font-light leading-relaxed text-lg mb-6">
                       {post.excerpt}
@@ -551,30 +552,30 @@ export default function Blog() {
                     <div className="markdown-content text-white/70 font-light leading-relaxed">
                       <ReactMarkdown
                         components={{
-                          h1: ({children}) => <h1 className="text-3xl font-thin text-white mt-10 mb-6 border-b border-white/20 pb-3">{children}</h1>,
-                          h2: ({children}) => <h2 className="text-2xl font-thin text-white mt-8 mb-4 border-l-2 border-white/30 pl-4">{children}</h2>,
-                          h3: ({children}) => <h3 className="text-xl font-light text-white/90 mt-6 mb-3">{children}</h3>,
-                          h4: ({children}) => <h4 className="text-lg font-light text-white/80 mt-4 mb-2">{children}</h4>,
-                          p: ({children}) => <p className="text-white/70 font-light leading-relaxed mb-4">{children}</p>,
-                          strong: ({children}) => <strong className="text-white/90 font-normal">{children}</strong>,
-                          em: ({children}) => <em className="text-white/80 italic">{children}</em>,
-                          ul: ({children}) => <ul className="list-none space-y-2 mb-6 pl-0">{children}</ul>,
-                          ol: ({children}) => <ol className="list-none space-y-2 mb-6 pl-0">{children}</ol>,
-                          li: ({children}) => (
+                          h1: ({ children }) => <h1 className="text-3xl font-thin text-white mt-10 mb-6 border-b border-white/20 pb-3">{children}</h1>,
+                          h2: ({ children }) => <h2 className="text-2xl font-thin text-white mt-8 mb-4 border-l-2 border-white/30 pl-4">{children}</h2>,
+                          h3: ({ children }) => <h3 className="text-xl font-light text-white/90 mt-6 mb-3">{children}</h3>,
+                          h4: ({ children }) => <h4 className="text-lg font-light text-white/80 mt-4 mb-2">{children}</h4>,
+                          p: ({ children }) => <p className="text-white/70 font-light leading-relaxed mb-4">{children}</p>,
+                          strong: ({ children }) => <strong className="text-white/90 font-normal">{children}</strong>,
+                          em: ({ children }) => <em className="text-white/80 italic">{children}</em>,
+                          ul: ({ children }) => <ul className="list-none space-y-2 mb-6 pl-0">{children}</ul>,
+                          ol: ({ children }) => <ol className="list-none space-y-2 mb-6 pl-0">{children}</ol>,
+                          li: ({ children }) => (
                             <li className="text-white/70 font-light leading-relaxed relative pl-6 mb-2">
                               <span className="absolute left-0 top-0 text-white/40 font-light">•</span>
                               {children}
                             </li>
                           ),
-                          blockquote: ({children}) => (
+                          blockquote: ({ children }) => (
                             <blockquote className="border-l-2 border-white/30 pl-6 py-2 my-6 bg-white/5 rounded-r">
                               <div className="text-white/60 italic">{children}</div>
                             </blockquote>
                           ),
-                          code: ({children}) => <code className="bg-white/10 px-2 py-1 rounded text-white/80 text-sm font-mono">{children}</code>,
-                          pre: ({children}) => <pre className="bg-white/5 border border-white/10 rounded p-4 my-6 overflow-x-auto text-sm">{children}</pre>,
+                          code: ({ children }) => <code className="bg-white/10 px-2 py-1 rounded text-white/80 text-sm font-mono">{children}</code>,
+                          pre: ({ children }) => <pre className="bg-white/5 border border-white/10 rounded p-4 my-6 overflow-x-auto text-sm">{children}</pre>,
                           hr: () => <hr className="border-white/20 my-8" />,
-                          a: ({href, children}) => (
+                          a: ({ href, children }) => (
                             <a href={href} className="text-white/80 underline hover:text-white transition-colors duration-300" target="_blank" rel="noopener noreferrer">
                               {children}
                             </a>
@@ -597,19 +598,19 @@ export default function Blog() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <div className="animate-slide-up">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-8 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
               Stay Updated
             </h2>
-            
+
             <p className="text-xl text-white/70 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
               Get the latest insights on technology, design, and digital transformation delivered to your inbox.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
-              <input 
+              <input
                 type="email"
                 placeholder="Enter your email"
                 className="flex-1 px-6 py-3 bg-transparent border border-white/30 text-white placeholder-white/50 focus:border-white/60 transition-colors duration-300"

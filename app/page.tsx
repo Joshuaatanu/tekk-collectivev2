@@ -25,7 +25,7 @@ export default function Home() {
 
 
         <Navbar />
-        
+
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <div className="mb-12 animate-scale-in">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin text-white tracking-wider mb-8">
@@ -61,25 +61,25 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5">
-            <div className="bg-black p-16 hover:bg-white/2 transition-all duration-300 group border-r border-b border-white/5 hover:border-white/20">
+            <div className="glass-card p-16 transition-all duration-300 group rounded-lg relative overflow-hidden">
               <div className="flex justify-between items-start mb-12">
                 <span className="text-5xl font-thin text-white/20 group-hover:text-white/40 transition-colors duration-300">
                   01
                 </span>
                 <div className="w-8 h-px bg-white/20 group-hover:w-20 transition-all duration-300"></div>
               </div>
-              
+
               <h3 className="text-3xl md:text-4xl text-white font-thin mb-6 group-hover:text-white/90 transition-colors duration-500">
                 Digital Transformation
               </h3>
-              
+
               <p className="text-white/60 font-light leading-relaxed mb-12 text-lg group-hover:text-white/70 transition-colors duration-500">
                 We redefine technology consulting with a futuristic approach, propelling your business light years ahead of the competition through innovative solutions and strategic insight.
               </p>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-white/30 rounded-full mr-4"></div>
@@ -94,30 +94,30 @@ export default function Home() {
                   <span className="text-white/50 font-light">Digital Architecture</span>
                 </div>
               </div>
-              
+
               {/* Subtle overlay effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-              
+
               {/* Subtle corner element */}
               <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
             </div>
 
-            <div className="bg-black p-16 hover:bg-white/2 transition-all duration-300 group border-r border-b border-white/5 hover:border-white/20">
+            <div className="glass-card p-16 transition-all duration-300 group rounded-lg relative overflow-hidden">
               <div className="flex justify-between items-start mb-12">
                 <span className="text-5xl font-thin text-white/20 group-hover:text-white/40 transition-colors duration-300">
                   02
                 </span>
                 <div className="w-8 h-px bg-white/20 group-hover:w-20 transition-all duration-300"></div>
               </div>
-              
+
               <h3 className="text-3xl md:text-4xl text-white font-thin mb-6 group-hover:text-white/90 transition-colors duration-500">
                 Expert Solutions
               </h3>
-              
+
               <p className="text-white/60 font-light leading-relaxed mb-12 text-lg group-hover:text-white/70 transition-colors duration-500">
                 Our team of galaxy-minded experts align your technological stars, transforming your business into a blazing supernova of success through proven methodologies.
               </p>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-white/30 rounded-full mr-4"></div>
@@ -132,10 +132,10 @@ export default function Home() {
                   <span className="text-white/50 font-light">Continuous Innovation</span>
                 </div>
               </div>
-              
+
               {/* Subtle overlay effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/8 to-white/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-              
+
               {/* Subtle corner element */}
               <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
             </div>
@@ -150,7 +150,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           <div className="absolute top-1/4 right-1/4 w-16 h-16 bg-white/3 rounded-full"></div>
         </div>
-        
+
         <div className="max-w-6xl mx-auto relative z-10 text-center">
           <div className="mb-20">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -162,11 +162,11 @@ export default function Home() {
               <div className="w-16 h-px bg-white/30"></div>
             </div>
             <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
-              No matter how big or small your tech challenge, we've got the cosmic solutions 
+              No matter how big or small your tech challenge, we've got the cosmic solutions
               that turn IT problems into stardust.
             </p>
           </div>
-          
+
           <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
             <a
               href="/contact"
@@ -195,7 +195,7 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
@@ -207,9 +207,9 @@ export default function Home() {
               <div className="w-16 h-px bg-white/30"></div>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/5">
-            <div className="bg-black p-12 hover:bg-white/2 transition-all duration-300 group border-r border-b border-white/5 hover:border-white/20">
+            <div className="glass-card p-12 transition-all duration-300 group rounded-lg relative overflow-hidden">
               <div className="flex items-center mb-8">
                 <img src="images/Dawn.svg" alt="RoyalQ Assistant" className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300" />
                 <div>
@@ -220,12 +220,12 @@ export default function Home() {
               <p className="text-white/60 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-500">
                 "Tekk Collective has completely transformed our online presence and elevated our brand with their exceptional work. Their attention to detail is unmatched."
               </p>
-              
+
               {/* Subtle corner element */}
               <div className="absolute bottom-4 right-4 w-4 h-4 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
             </div>
 
-            <div className="bg-black p-12 hover:bg-white/2 transition-all duration-700 group border-r border-b border-white/5 hover:border-white/20 animate-scale-in" style={{ animationDelay: '0.1s' }}>
+            <div className="glass-card p-12 transition-all duration-700 group rounded-lg relative overflow-hidden animate-scale-in" style={{ animationDelay: '0.1s' }}>
               <div className="flex items-center mb-8">
                 <img src="images/Portal.svg" alt="Emperico Works" className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300" />
                 <div>
@@ -236,12 +236,12 @@ export default function Home() {
               <p className="text-white/60 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-500">
                 "Their minimalist design philosophy and technical expertise were a game-changer for our startup's success. We couldn't be happier with the results."
               </p>
-              
+
               {/* Subtle corner element */}
               <div className="absolute bottom-4 right-4 w-4 h-4 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
             </div>
 
-            <div className="bg-black p-12 hover:bg-white/2 transition-all duration-700 group border-r border-b border-white/5 hover:border-white/20 animate-scale-in" style={{ animationDelay: '0.2s' }}>
+            <div className="glass-card p-12 transition-all duration-700 group rounded-lg relative overflow-hidden animate-scale-in" style={{ animationDelay: '0.2s' }}>
               <div className="flex items-center mb-8">
                 <img src="images/Transparency.svg" alt="TechFlow Solutions" className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300" />
                 <div>
@@ -252,7 +252,7 @@ export default function Home() {
               <p className="text-white/60 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-500">
                 "Working with Tekk Collective was a seamless experience from start to finish. Their team delivered beyond our expectations and on time."
               </p>
-              
+
               {/* Subtle corner element */}
               <div className="absolute bottom-4 right-4 w-4 h-4 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
             </div>
