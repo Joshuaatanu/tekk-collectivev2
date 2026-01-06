@@ -100,7 +100,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <a
             href="/contact"
-            className="px-10 w-auto py-1.5 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors text-center duration-200 text-sm"
+            className="px-5 py-1.5 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors duration-200 text-sm whitespace-nowrap"
             aria-label="Get started with Tekk Collective"
           >
             Get Started
@@ -126,40 +126,32 @@ export default function Navbar() {
         {/* Mobile Menu Overlay */}
         <div
           id="mobile-menu"
-          className={`fixed inset-0 bg-black/95 backdrop-blur-md z-40 md:hidden transition-all duration-500 ${isMobileMenuOpen
+          className={`fixed inset-0 bg-black/95 backdrop-blur-md z-40 md:hidden transition-opacity duration-200 ${isMobileMenuOpen
             ? 'opacity-100 visible'
-            : 'opacity-0 invisible'
+            : 'opacity-0 invisible pointer-events-none'
             }`}
           role="dialog"
           aria-modal="true"
           aria-labelledby="mobile-menu-title"
         >
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
+          <div className="flex flex-col items-center justify-center h-full gap-6">
             <h2 id="mobile-menu-title" className="sr-only">Mobile Navigation Menu</h2>
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className={`text-2xl font-light tracking-wider transition-all duration-300 hover:text-white relative group focus-ring ${pathname === item.href ? 'text-white' : 'text-white/70'
+                className={`text-xl font-light tracking-wide transition-colors duration-200 ${pathname === item.href ? 'text-white' : 'text-white/60 active:text-white'
                   }`}
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                  animation: isMobileMenuOpen ? 'slide-up 0.6s ease-out forwards' : ''
-                }}
                 onClick={() => setIsMobileMenuOpen(false)}
                 aria-current={pathname === item.href ? 'page' : undefined}
               >
-                <span>{item.label}</span>
-                <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-px transition-all duration-300 ${pathname === item.href
-                  ? 'w-full bg-brand-primary'
-                  : 'w-0 group-hover:w-full bg-white'
-                  }`}></div>
+                {item.label}
               </a>
             ))}
 
             <a
               href="/contact"
-              className="mt-8 px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors duration-200"
+              className="mt-4 px-8 py-3 rounded-full bg-white text-black font-medium active:bg-white/90 transition-colors duration-200 whitespace-nowrap"
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Get started with Tekk Collective"
             >
