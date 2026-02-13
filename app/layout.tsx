@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import UnicornBackground from '@/components/UnicornBackground'
 import PageTransition from '@/components/PageTransition'
+import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -91,6 +92,7 @@ export default function RootLayout({
             `
           }}
         />
+        <Analytics />
       </body>
     </html>
   )
