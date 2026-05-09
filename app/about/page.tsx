@@ -117,19 +117,13 @@ export default function About() {
 
           <div className="space-y-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <p className="text-xl text-white/70 font-light leading-relaxed">
-              Founded in 2019, Tekk Collective emerged from a simple belief: technology should amplify human potential,
-              not complicate it. What started as a small team of passionate technologists has evolved into a globally
-              recognized consulting firm.
+              Tekk Collective emerged from a simple belief: technology should amplify human potential,
+              not complicate it. What started as a small team of passionate technologists has evolved into the
+              consultancy we run today.
             </p>
 
             <p className="text-xl text-white/70 font-light leading-relaxed">
-              We've guided over 500 companies through their digital transformation journeys, from ambitious startups
-              to Fortune 500 enterprises. Our approach combines cutting-edge technology with human-centered design,
-              ensuring every solution we create serves both business objectives and user needs.
-            </p>
-
-            <p className="text-xl text-white/70 font-light leading-relaxed">
-              Today, we're not just consultants—we're partners in shaping the future of business technology.
+              Today, we&apos;re not just consultants—we&apos;re partners in shaping the future of business technology.
             </p>
           </div>
         </div>
