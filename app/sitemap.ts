@@ -29,6 +29,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: `${baseUrl}/regions`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/regions/uk`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/regions/europe`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/regions/west-africa`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/cross-border`,
+      lastModified: new Date(),
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
     },
