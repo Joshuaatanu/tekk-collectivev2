@@ -77,7 +77,7 @@ export default function Home() {
               </h3>
 
               <p className="text-white/60 font-light leading-relaxed mb-12 text-lg group-hover:text-white/70 transition-colors duration-500">
-                We redefine technology consulting with a futuristic approach, propelling your business light years ahead of the competition through innovative solutions and strategic insight.
+                We help businesses move faster with technology, combining strategic insight with practical implementation to deliver measurable results.
               </p>
 
               <div className="space-y-4">
@@ -115,7 +115,7 @@ export default function Home() {
               </h3>
 
               <p className="text-white/60 font-light leading-relaxed mb-12 text-lg group-hover:text-white/70 transition-colors duration-500">
-                Our team of galaxy-minded experts align your technological stars, transforming your business into a blazing supernova of success through proven methodologies.
+                Our team aligns your technology choices with your business goals, applying proven methodologies to deliver software that works.
               </p>
 
               <div className="space-y-4">
@@ -162,8 +162,8 @@ export default function Home() {
               <div className="w-16 h-px bg-white/30"></div>
             </div>
             <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
-              No matter how big or small your tech challenge, we've got the cosmic solutions
-              that turn IT problems into stardust.
+              No matter how big or small your tech challenge, we&apos;ve got the practical
+              expertise to help you address it.
             </p>
           </div>
 
