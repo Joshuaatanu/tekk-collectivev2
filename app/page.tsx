@@ -75,11 +75,9 @@ export default function Home() {
                 <div className="w-0 group-hover:w-full h-px bg-white transition-all duration-500 mt-2"></div>
               </a>
               <a
-                href="https://sentinoai.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/sentino-ai"
                 className="group px-10 py-3.5 text-white/70 font-light hover:text-white transition-colors duration-500"
-                aria-label="Visit Sentino AI, our academic research platform"
+                aria-label="Learn about Sentino AI, our in-house academic research platform"
               >
                 <span>Meet Sentino AI →</span>
                 <div className="w-0 group-hover:w-full h-px bg-white/40 transition-all duration-500 mt-2"></div>

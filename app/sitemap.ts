@@ -17,6 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: `${baseUrl}/sentino-ai`,
+      lastModified: new Date(),
+    },
+    {
       url: `${baseUrl}/project`,
       lastModified: new Date(),
     },
