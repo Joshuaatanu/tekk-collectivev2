@@ -199,7 +199,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
-              Client Stories
+              Voices
             </h2>
             <div className="flex items-center justify-center mb-8">
               <div className="w-16 h-px bg-white/30"></div>
@@ -214,7 +214,7 @@ export default function Home() {
                 <img src="images/Dawn.svg" alt="RoyalQ Assistant" className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300" />
                 <div>
                   <h4 className="text-white font-light">RoyalQ Assistant</h4>
-                  <span className="text-white/40 text-sm font-light">Financial Technology</span>
+                  <span className="text-white/40 text-sm font-light">Partner · Financial Technology</span>
                 </div>
               </div>
               <p className="text-white/60 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-500">
