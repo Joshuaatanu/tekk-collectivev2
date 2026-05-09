@@ -282,6 +282,39 @@ export default function About() {
         </div>
       </section>
 
+      {/* Structured data: Person + WebPage schema for the About page */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "url": "https://tekkcollective.com/about",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Tekk Collective",
+              "url": "https://tekkcollective.com",
+              "founder": [
+                {
+                  "@type": "Person",
+                  "name": "Joshua Atanu",
+                  "jobTitle": "Co-Founder & CTO",
+                  "worksFor": { "@type": "Organization", "name": "Tekk Collective" },
+                  "email": "atanu@tekkcollective.com"
+                },
+                {
+                  "@type": "Person",
+                  "name": "Oyinkansola Soleye",
+                  "jobTitle": "Co-Founder",
+                  "worksFor": { "@type": "Organization", "name": "Tekk Collective" },
+                  "email": "oyinkansola@tekkcollective.com"
+                }
+              ]
+            }
+          })
+        }}
+      />
+
       <Footer />
     </div>
   );
