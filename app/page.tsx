@@ -248,9 +248,9 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/5">
             <div className="glass-card p-12 transition-all duration-300 group rounded-lg relative overflow-hidden">
               <div className="flex items-center mb-8">
-                <img src="images/Dawn.svg" alt="RoyalQ Assistant" className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300" />
+                <img src="images/Dawn.svg" alt="Royal Q" className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300" />
                 <div>
-                  <h4 className="text-white font-light">RoyalQ Assistant</h4>
+                  <h4 className="text-white font-light">Royal Q</h4>
                   <span className="text-white/40 text-sm font-light">Partner · Financial Technology</span>
                 </div>
               </div>
