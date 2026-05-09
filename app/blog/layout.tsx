@@ -15,7 +15,6 @@ export const metadata: Metadata = {
   ],
   authors: [
     { name: 'Joshua Atanu', url: 'https://tekkcollective.com/about' },
-    { name: 'Olaoluwa Olaogun', url: 'https://tekkcollective.com/about' },
     { name: 'Oyinkansola Soleye', url: 'https://tekkcollective.com/about' }
   ],
   openGraph: {
