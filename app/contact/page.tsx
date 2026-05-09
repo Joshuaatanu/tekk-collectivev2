@@ -504,7 +504,7 @@ export default function Contact() {
               },
               {
                 question: "Do you work with startups or just large enterprises?",
-                answer: "We work with companies of all sizes, from early-stage startups to Fortune 500 enterprises. Our approach scales to match your needs, budget, and growth stage. We believe great technology solutions should be accessible to businesses at every level."
+                answer: "We work with companies across a range of sizes, from early-stage startups to established mid-market and enterprise teams. Our approach scales to match your needs, budget, and growth stage. We believe great technology solutions should be accessible to businesses at every level."
               },
               {
                 question: "What makes Tekk Collective different from other consulting firms?",
@@ -512,7 +512,7 @@ export default function Contact() {
               },
               {
                 question: "How do you ensure project success?",
-                answer: "We use proven methodologies including agile development, regular client communication, milestone-based delivery, and continuous testing. Our 95% project success rate comes from clear expectation setting, transparent processes, and our commitment to delivering measurable results."
+                answer: "We use proven methodologies including agile development, regular client communication, milestone-based delivery, and continuous testing. Project success comes from clear expectation setting, transparent processes, and a commitment to delivering measurable results."
               },
               {
                 question: "Can you work with our existing team and tools?",
