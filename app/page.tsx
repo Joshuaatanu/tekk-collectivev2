@@ -2,7 +2,27 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
+
+const homeServices = [
+  {
+    index: "01",
+    title: "AI Implementation",
+    description:
+      "LLM and generative AI integration, agents and workflow automation, RAG systems, and AI strategy that ships."
+  },
+  {
+    index: "02",
+    title: "Custom Software Development",
+    description:
+      "Web, mobile, APIs, and the cloud architecture that holds it together. The product surface around your AI."
+  },
+  {
+    index: "03",
+    title: "Data & Analytics",
+    description:
+      "Pipelines, infrastructure, ML models, and the dashboards that make your data legible to the business."
+  }
+];
 
 export default function Home() {
   return (
@@ -38,9 +58,33 @@ export default function Home() {
               <div className="mx-6 w-2 h-2 bg-white/40 rounded-full"></div>
               <div className="w-16 h-px bg-white/30"></div>
             </div>
-            <p className="text-xl md:text-2xl text-white/70 font-light tracking-wide max-w-3xl mx-auto">
-              Transforming businesses through innovative technology solutions and strategic consulting
+            <p className="text-xl md:text-2xl text-white/70 font-light tracking-wide max-w-3xl mx-auto mb-6">
+              Practical AI for businesses in the UK and Africa. We design, deploy, and ship intelligent systems for the teams that need them.
             </p>
+            <p className="text-sm text-white/40 font-light tracking-[0.3em] uppercase mb-12">
+              Manchester · Lagos · Abuja
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a
+                href="/contact"
+                className="group px-10 py-3.5 border border-white/30 text-white font-light hover:bg-white hover:text-black transition-all duration-500"
+                aria-label="Start a conversation with Tekk Collective"
+              >
+                <span>Start a conversation</span>
+                <div className="w-0 group-hover:w-full h-px bg-white transition-all duration-500 mt-2"></div>
+              </a>
+              <a
+                href="https://sentinoai.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group px-10 py-3.5 text-white/70 font-light hover:text-white transition-colors duration-500"
+                aria-label="Visit Sentino AI, our academic research platform"
+              >
+                <span>Meet Sentino AI →</span>
+                <div className="w-0 group-hover:w-full h-px bg-white/40 transition-all duration-500 mt-2"></div>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -54,136 +98,131 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* What we do Section */}
       <section className="py-32 px-6 relative">
-        {/* Subtle Section Dividers */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5">
-            <div className="glass-card p-16 transition-all duration-300 group rounded-lg relative overflow-hidden">
-              <div className="flex justify-between items-start mb-12">
-                <span className="text-5xl font-thin text-white/20 group-hover:text-white/40 transition-colors duration-300">
-                  01
-                </span>
-                <div className="w-8 h-px bg-white/20 group-hover:w-20 transition-all duration-300"></div>
-              </div>
-
-              <h3 className="text-3xl md:text-4xl text-white font-thin mb-6 group-hover:text-white/90 transition-colors duration-500">
-                Digital Transformation
-              </h3>
-
-              <p className="text-white/60 font-light leading-relaxed mb-12 text-lg group-hover:text-white/70 transition-colors duration-500">
-                We help businesses move faster with technology, combining strategic insight with practical implementation to deliver measurable results.
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white/30 rounded-full mr-4"></div>
-                  <span className="text-white/50 font-light">Strategic Technology Planning</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white/30 rounded-full mr-4"></div>
-                  <span className="text-white/50 font-light">Process Innovation</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white/30 rounded-full mr-4"></div>
-                  <span className="text-white/50 font-light">Digital Architecture</span>
-                </div>
-              </div>
-
-              {/* Subtle overlay effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-              {/* Subtle corner element */}
-              <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
-            </div>
-
-            <div className="glass-card p-16 transition-all duration-300 group rounded-lg relative overflow-hidden">
-              <div className="flex justify-between items-start mb-12">
-                <span className="text-5xl font-thin text-white/20 group-hover:text-white/40 transition-colors duration-300">
-                  02
-                </span>
-                <div className="w-8 h-px bg-white/20 group-hover:w-20 transition-all duration-300"></div>
-              </div>
-
-              <h3 className="text-3xl md:text-4xl text-white font-thin mb-6 group-hover:text-white/90 transition-colors duration-500">
-                Expert Solutions
-              </h3>
-
-              <p className="text-white/60 font-light leading-relaxed mb-12 text-lg group-hover:text-white/70 transition-colors duration-500">
-                Our team aligns your technology choices with your business goals, applying proven methodologies to deliver software that works.
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white/30 rounded-full mr-4"></div>
-                  <span className="text-white/50 font-light">Technical Excellence</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white/30 rounded-full mr-4"></div>
-                  <span className="text-white/50 font-light">Scalable Architecture</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white/30 rounded-full mr-4"></div>
-                  <span className="text-white/50 font-light">Continuous Innovation</span>
-                </div>
-              </div>
-
-              {/* Subtle overlay effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/8 to-white/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-              {/* Subtle corner element */}
-              <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="py-32 px-6 relative">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-          <div className="absolute top-1/4 right-1/4 w-16 h-16 bg-white/3 rounded-full"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto relative z-10 text-center">
-          <div className="mb-20">
+          <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
-              Ready to Transform?
+              What we do
             </h2>
             <div className="flex items-center justify-center mb-8">
               <div className="w-16 h-px bg-white/30"></div>
               <div className="mx-6 w-2 h-2 bg-white/40 rounded-full"></div>
               <div className="w-16 h-px bg-white/30"></div>
             </div>
-            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
-              No matter how big or small your tech challenge, we&apos;ve got the practical
-              expertise to help you address it.
+            <p className="text-lg text-white/60 font-light max-w-2xl mx-auto leading-relaxed">
+              AI implementation, custom software, and the data foundations that support them.
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
-            <a
-              href="/contact"
-              className="group px-12 py-4 border border-brand-primary/50 bg-brand-gradient text-white font-light hover:bg-brand-secondary hover:border-brand-secondary transition-all duration-500 focus-ring shadow-brand-glow hover:shadow-lg"
-              aria-label="Start your digital transformation journey with Tekk Collective"
-            >
-              <span>Start Your Journey</span>
-              <div className="w-0 group-hover:w-full h-px bg-white transition-all duration-500 mt-2"></div>
-            </a>
-            <a
-              href="/services"
-              className="group px-12 py-4 text-white/70 font-light hover:text-brand-accent transition-colors duration-500 focus-ring"
-              aria-label="Explore our technology consulting services"
-            >
-              <span>Explore Services</span>
-              <div className="w-0 group-hover:w-full h-px bg-brand-accent transition-all duration-500 mt-2"></div>
-            </a>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/5">
+            {homeServices.map((service, i) => (
+              <div
+                key={service.title}
+                className="bg-black p-12 transition-all duration-500 group relative overflow-hidden border-r border-b border-white/5 hover:border-white/20 animate-scale-in"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="flex justify-between items-start mb-10">
+                  <span className="text-5xl font-thin text-white/20 group-hover:text-white/40 transition-colors duration-500">
+                    {service.index}
+                  </span>
+                  <div className="w-8 h-px bg-white/20 group-hover:w-20 transition-all duration-500"></div>
+                </div>
+
+                <h3 className="text-2xl md:text-3xl text-white font-thin mb-6 group-hover:text-white/90 transition-colors duration-500">
+                  {service.title}
+                </h3>
+
+                <p className="text-white/60 font-light leading-relaxed mb-8 group-hover:text-white/70 transition-colors duration-500">
+                  {service.description}
+                </p>
+
+                <a
+                  href="/services"
+                  className="inline-flex items-center text-white/50 font-light text-sm tracking-wider hover:text-white/80 transition-colors duration-300"
+                >
+                  <span>Learn more</span>
+                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
+
+                <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-white/10 group-hover:border-white/30 transition-colors duration-500"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Work — Sentino AI */}
+      <section className="py-32 px-6 relative">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="animate-slide-up">
+              <span className="text-white/40 text-xs font-light tracking-[0.3em] uppercase mb-6 block">
+                Featured work
+              </span>
+              <h2 className="text-4xl md:text-5xl font-thin text-white mb-6 leading-tight">
+                We don&apos;t just consult on AI.<br />
+                <span className="text-white/70">We build it.</span>
+              </h2>
+              <p className="text-lg text-white/60 font-light leading-relaxed mb-8">
+                Sentino AI is our in-house academic research platform — multi-source search across arXiv, PubMed, IEEE Xplore, and more, with RAG-based chat over research PDFs. Built and validated in partnership with the University of Greater Manchester.
+              </p>
+              <p className="text-white/50 font-light leading-relaxed mb-10">
+                When you hire us, you&apos;re hiring a team that has shipped a production AI product — not one that&apos;s only talked about it.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <a
+                  href="https://sentinoai.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center px-8 py-3 border border-white/30 text-white font-light hover:bg-white hover:text-black transition-all duration-500"
+                >
+                  <span>Visit Sentino AI</span>
+                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
+                <a
+                  href="/project"
+                  className="group inline-flex items-center px-8 py-3 text-white/70 font-light hover:text-white transition-colors duration-500"
+                >
+                  <span>View all projects</span>
+                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="aspect-[4/3] bg-gradient-to-br from-brand-primary/10 via-white/5 to-transparent border border-white/10 rounded-lg flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10" style={{
+                  backgroundImage: `
+                    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+                  `,
+                  backgroundSize: '24px 24px'
+                }}></div>
+                <div className="text-center relative z-10 px-8">
+                  <div className="text-6xl md:text-7xl font-thin text-white tracking-wider mb-4">
+                    Sentino AI
+                  </div>
+                  <div className="text-white/40 text-sm font-light tracking-[0.2em] uppercase">
+                    Academic research, accelerated
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-white/20"></div>
+                <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-white/20"></div>
+                <div className="absolute bottom-4 left-4 w-8 h-8 border-b border-l border-white/20"></div>
+                <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-white/20"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -218,7 +257,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-white/60 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-500">
-                "Tekk Collective has completely transformed our online presence and elevated our brand with their exceptional work. Their attention to detail is unmatched."
+                &ldquo;Tekk Collective has completely transformed our online presence and elevated our brand with their exceptional work. Their attention to detail is unmatched.&rdquo;
               </p>
 
               {/* Subtle corner element */}
@@ -234,7 +273,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-white/60 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-500">
-                "Their minimalist design philosophy and technical expertise were a game-changer for our startup's success. We couldn't be happier with the results."
+                &ldquo;Their minimalist design philosophy and technical expertise were a game-changer for our startup&rsquo;s success. We couldn&rsquo;t be happier with the results.&rdquo;
               </p>
 
               {/* Subtle corner element */}
@@ -250,7 +289,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-white/60 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-500">
-                "Working with Tekk Collective was a seamless experience from start to finish. Their team delivered beyond our expectations and on time."
+                &ldquo;Working with Tekk Collective was a seamless experience from start to finish. Their team delivered beyond our expectations and on time.&rdquo;
               </p>
 
               {/* Subtle corner element */}
@@ -260,6 +299,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Final CTA Section */}
+      <section className="py-32 px-6 relative">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10 text-center">
+          <div className="mb-20">
+            <h2 className="text-4xl md:text-6xl font-thin text-white mb-6 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
+              Got an AI project?
+            </h2>
+            <div className="flex items-center justify-center mb-8">
+              <div className="w-16 h-px bg-white/30"></div>
+              <div className="mx-6 w-2 h-2 bg-white/40 rounded-full"></div>
+              <div className="w-16 h-px bg-white/30"></div>
+            </div>
+            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+              Tell us what you&apos;re trying to build. We&apos;ll tell you whether we can help and how.
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
+            <a
+              href="/contact"
+              className="group px-12 py-4 border border-brand-primary/50 bg-brand-gradient text-white font-light hover:bg-brand-secondary hover:border-brand-secondary transition-all duration-500 focus-ring shadow-brand-glow hover:shadow-lg"
+              aria-label="Start a conversation with Tekk Collective"
+            >
+              <span>Start a conversation</span>
+              <div className="w-0 group-hover:w-full h-px bg-white transition-all duration-500 mt-2"></div>
+            </a>
+            <a
+              href="/services"
+              className="group px-12 py-4 text-white/70 font-light hover:text-brand-accent transition-colors duration-500 focus-ring"
+              aria-label="Explore our AI consulting services"
+            >
+              <span>Explore Services</span>
+              <div className="w-0 group-hover:w-full h-px bg-brand-accent transition-all duration-500 mt-2"></div>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Structured Data for SEO */}
       <script
@@ -271,14 +352,15 @@ export default function Home() {
             "name": "Tekk Collective",
             "url": "https://tekkcollective.com",
             "logo": "https://tekkcollective.com/tekk-collective-logo.svg",
-            "description": "Technology consulting firm specializing in digital transformation, AI solutions, cloud architecture, and strategic technology planning.",
-            "founder": {
-              "@type": "Person",
-              "name": "Joshua Atanu"
-            },
+            "description": "AI consultancy that designs, deploys, and builds intelligent systems for teams across the UK and Africa.",
+            "founder": [
+              { "@type": "Person", "name": "Joshua Atanu" },
+              { "@type": "Person", "name": "Oyinkansola Soleye" }
+            ],
             "address": {
               "@type": "PostalAddress",
-              "addressCountry": "US"
+              "addressLocality": "Manchester",
+              "addressCountry": "GB"
             },
             "contactPoint": {
               "@type": "ContactPoint",
