@@ -291,12 +291,9 @@ export default function Home() {
               "https://twitter.com/tekkcollective"
             ],
             "services": [
-              "Technology Consulting",
-              "Digital Transformation",
-              "AI Solutions",
-              "Cloud Architecture",
-              "Software Development",
-              "Cybersecurity"
+              "AI Implementation",
+              "Custom Software Development",
+              "Data & Analytics"
             ]
           })
         }}
