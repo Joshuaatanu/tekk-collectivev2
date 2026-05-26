@@ -5,76 +5,43 @@ import UnicornBackground from "@/components/UnicornBackground";
 
 const services = [
   {
-    title: "Strategy Consulting",
-    description: "Digital transformation roadmaps and technology strategy development for sustainable growth.",
+    title: "AI Implementation",
+    description:
+      "Practical AI delivered to production. From initial feasibility to embedded engineering, we ship AI features that work — and that you can maintain after we're gone.",
     features: [
-      "Digital Transformation Planning",
-      "Technology Roadmapping",
-      "Business Process Optimization",
-      "Innovation Workshops"
+      "LLM and generative AI integration",
+      "AI agents and workflow automation",
+      "RAG systems and document intelligence",
+      "AI strategy and feasibility assessment"
     ],
     icon: "01",
     color: "from-white/20 to-white/5"
   },
   {
-    title: "Software Development",
-    description: "Custom software solutions built with modern technologies and best practices.",
+    title: "Custom Software Development",
+    description:
+      "End-to-end software delivery for the products that surround your AI — web, mobile, APIs, and the cloud architecture they run on.",
     features: [
-      "Web Applications",
-      "Mobile Applications",
-      "API Development",
-      "System Integration"
+      "Web applications",
+      "Mobile applications",
+      "API development and system integration",
+      "Cloud architecture and infrastructure"
     ],
     icon: "02",
     color: "from-white/15 to-white/5"
   },
   {
-    title: "Cloud Solutions",
-    description: "Scalable cloud infrastructure and migration services for modern businesses.",
+    title: "Data & Analytics",
+    description:
+      "The data foundations AI depends on. Pipelines, infrastructure, models, and the dashboards that make them legible to the business.",
     features: [
-      "Cloud Architecture",
-      "Migration Services",
-      "DevOps Implementation",
-      "Infrastructure Automation"
+      "Data strategy and infrastructure",
+      "Business intelligence and dashboards",
+      "Machine learning models",
+      "Data visualisation"
     ],
     icon: "03",
     color: "from-white/20 to-white/5"
-  },
-  {
-    title: "Data & Analytics",
-    description: "Transform your data into actionable insights with advanced analytics solutions.",
-    features: [
-      "Data Strategy",
-      "Business Intelligence",
-      "Machine Learning",
-      "Data Visualization"
-    ],
-    icon: "04",
-    color: "from-white/15 to-white/5"
-  },
-  {
-    title: "Cybersecurity",
-    description: "Comprehensive security frameworks to protect your digital assets.",
-    features: [
-      "Security Assessment",
-      "Compliance Management",
-      "Incident Response",
-      "Security Training"
-    ],
-    icon: "05",
-    color: "from-white/20 to-white/5"
-  },
-  {
-    title: "Digital Innovation",
-    description: "Emerging technology integration and innovation consulting services.",
-    features: [
-      "AI/ML Integration",
-      "IoT Solutions",
-      "Blockchain Development",
-      "Emerging Tech Advisory"
-    ],
-    icon: "06",
-    color: "from-white/15 to-white/5"
   }
 ];
 
@@ -114,7 +81,7 @@ export default function Services() {
               <div className="w-16 h-px bg-white/30 animate-line-expand"></div>
             </div>
             <p className="text-xl md:text-2xl text-white/70 font-light tracking-wide max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.5s' }}>
-              Comprehensive technology solutions designed to accelerate your digital transformation journey
+              AI implementation, custom software, and the data foundations that support them.
             </p>
           </div>
         </div>
@@ -140,9 +107,9 @@ export default function Services() {
         <div className="absolute inset-0 backdrop-blur-[1px] bg-black/8"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/5">
             {services.map((service, index) => (
-              <div key={index} className="bg-black p-16 hover:bg-white/2 transition-all duration-700 group border-r border-b border-white/5 hover:border-white/20 animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className="bg-black p-12 lg:p-16 hover:bg-white/2 transition-all duration-700 group border-r border-b border-white/5 hover:border-white/20 animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="flex justify-between items-start mb-12">
                   <span className="text-5xl font-thin text-white/20 group-hover:text-white/40 transition-colors duration-500 animate-text-shimmer bg-gradient-to-r from-white/20 to-white/40 bg-clip-text text-transparent bg-[length:200%_100%]">
                     {service.icon}
@@ -160,7 +127,7 @@ export default function Services() {
 
                 <div className="mb-8">
                   <h4 className="text-white/80 font-light text-sm tracking-wider uppercase mb-4 group-hover:text-white/90 transition-colors duration-500">
-                    Key Services
+                    Capabilities
                   </h4>
                 </div>
 
@@ -241,10 +208,10 @@ export default function Services() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="animate-scale-in">
             <h2 className="text-4xl md:text-6xl font-thin text-white mb-8 bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
-              Start Your Project
+              Ready to ship AI that works?
             </h2>
             <p className="text-white/60 text-xl font-light mb-12 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              Ready to transform your business with cutting-edge technology solutions?
+              Tell us what you&apos;re trying to build. We&apos;ll tell you whether we can help and how.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-slide-up" style={{ animationDelay: '0.6s' }}>
@@ -256,12 +223,10 @@ export default function Services() {
                 <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
               </a>
               <a
-                href="/documents/service-guide.html"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/project"
                 className="text-white/70 hover:text-white transition-colors duration-500 underline underline-offset-4 font-light group inline-block"
               >
-                <span>View Service Guide</span>
+                <span>See what we&apos;ve built</span>
                 <div className="w-0 group-hover:w-full h-px bg-white transition-all duration-500 mt-2"></div>
               </a>
             </div>
@@ -272,4 +237,4 @@ export default function Services() {
       <Footer />
     </div>
   );
-} 
+}

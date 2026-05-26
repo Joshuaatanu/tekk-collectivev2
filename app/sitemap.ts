@@ -17,11 +17,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: `${baseUrl}/sentino-ai`,
+      lastModified: new Date(),
+    },
+    {
       url: `${baseUrl}/project`,
       lastModified: new Date(),
     },
     {
       url: `${baseUrl}/work`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/regions`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/regions/uk`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/regions/europe`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/regions/west-africa`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/cross-border`,
       lastModified: new Date(),
     },
     {
@@ -34,6 +58,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/terms`,
       lastModified: new Date(),
     },
   ]

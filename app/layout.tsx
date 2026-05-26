@@ -13,36 +13,49 @@ const inter = Inter({
 export const metadata = {
   metadataBase: new URL('https://tekkcollective.com'),
   title: {
-    default: 'Tekk Collective - Technology Consulting Excellence',
+    default: 'Tekk Collective — AI Consultancy in Manchester',
     template: '%s | Tekk Collective'
   },
-  description: 'Transforming businesses through innovative technology solutions and strategic consulting. Expert team delivering AI, cloud, and digital transformation services.',
-  keywords: ['technology consulting', 'digital transformation', 'AI solutions', 'cloud architecture', 'software development'],
-  authors: [{ name: 'Tekk Collective' }],
+  description: 'AI consultancy that designs, deploys, and builds intelligent systems for teams across the UK and Africa. Headquartered in Manchester, with engineering teams in Lagos and Abuja.',
+  keywords: [
+    'AI consultancy Manchester',
+    'AI implementation UK',
+    'AI consulting Nigeria',
+    'AI agency UK',
+    'cross-border AI',
+    'AI consultancy Lagos',
+    'Manchester AI agency',
+    'Sentino AI',
+    'GAVL'
+  ],
+  authors: [
+    { name: 'Joshua Atanu' },
+    { name: 'Oyinkansola Soleye' }
+  ],
   creator: 'Tekk Collective',
-  publisher: 'Tekk Collective',
+  publisher: 'Tekk Collective Ltd',
   robots: 'index, follow',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_GB',
     url: 'https://tekkcollective.com',
-    title: 'Tekk Collective - Technology Consulting Excellence',
-    description: 'Transforming businesses through innovative technology solutions and strategic consulting.',
+    title: 'Tekk Collective — AI Consultancy in Manchester',
+    description: 'AI consultancy that designs, deploys, and builds intelligent systems for teams across the UK and Africa.',
     siteName: 'Tekk Collective',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Tekk Collective - Technology Consulting',
+        alt: 'Tekk Collective — AI consultancy in Manchester',
         type: 'image/jpeg'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tekk Collective - Technology Consulting Excellence',
-    description: 'Transforming businesses through innovative technology solutions and strategic consulting.',
+    title: 'Tekk Collective — AI Consultancy in Manchester',
+    description: 'AI consultancy that designs, deploys, and builds intelligent systems for teams across the UK and Africa.',
     images: ['/og-image.jpg']
   },
   viewport: 'width=device-width, initial-scale=1',

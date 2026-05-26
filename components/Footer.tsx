@@ -76,7 +76,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="text-center animate-slide-up" style={{ animationDelay: '0.8s' }}>
           <p className="text-white/60 font-light text-sm tracking-wider">
-            &copy; 2023 Tekk Collective. All rights reserved.
+            &copy; {new Date().getFullYear()} Tekk Collective. All rights reserved.
           </p>
         </div>
       </div>

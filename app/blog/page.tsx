@@ -114,8 +114,8 @@ Organizations that successfully implement cloud-native architectures typically s
 - Improved developer productivity and job satisfaction
 
 The journey to cloud-native architecture is complex but rewarding. Success requires not just technical changes but also cultural shifts toward DevOps practices, continuous learning, and embracing failure as a learning opportunity.`,
-    author: "Olaoluwa Olagun",
-    authorRole: "Chief Technology Officer",
+    author: "Joshua Atanu",
+    authorRole: "Founder & CTO",
     publishDate: "March 10, 2024",
     readTime: "12 min read",
     category: "Cloud Computing",
@@ -233,8 +233,8 @@ The trends of 2024 represent a maturation of the UX field—moving beyond surfac
     title: "Cybersecurity in the Age of Remote Work",
     excerpt: "Essential cybersecurity strategies for protecting your business in an increasingly remote and distributed work environment.",
     content: "The shift to remote work has fundamentally changed the cybersecurity landscape...",
-    author: "Olaoluwa Olagun",
-    authorRole: "Chief Technology Officer",
+    author: "Joshua Atanu",
+    authorRole: "Founder & CTO",
     publishDate: "March 1, 2024",
     readTime: "9 min read",
     category: "Security",
