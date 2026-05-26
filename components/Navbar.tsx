@@ -69,8 +69,9 @@ export default function Navbar() {
           <Image
             src="/tekk-collective-logo.svg"
             alt="Tekk Collective"
-            width="120"
-            height="24"
+            width={120}
+            height={24}
+            priority
             className="h-5 w-auto transition-transform duration-300 group-hover:scale-105"
           />
         </a>
